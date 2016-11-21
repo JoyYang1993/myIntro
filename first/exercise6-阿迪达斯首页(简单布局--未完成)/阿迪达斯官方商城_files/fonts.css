@@ -1,0 +1,8 @@
+/*! Adidas fonts
+--------------------------------------------*/
+@font-face{font-family:'adiNeueRegular';src:url('adiNeueRegular.eot');src:url('adiNeueRegular.eot?#iefix') format('embedded-opentype'),url('adiNeueRegular.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'adiNeueBold';src:url('adiNeueBold.eot');src:url('adiNeueBold.eot?#iefix') format('embedded-opentype'),url('adiNeueBold.woff') format('woff'),url('adiNeueBold.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'adihausregular';src:url('adihausregular.eot');src:url('adihausregular.eot?#iefix') format('embedded-opentype'),url('adihausregular.woff') format('woff'),url('adihausregular.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'adihausbold';src:url('adihausbold.eot');src:url('adihausbold.eot?#iefix') format('embedded-opentype'),url('adihausbold.woff') format('woff'),url('adihausbold.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'icomoonregular';src:url('icomoon.eot');src:url('icomoon.eot?#iefix') format('embedded-opentype'),url('icomoon.woff') format('woff'),url('icomoon.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'adi13wfBold';src:url('adi13wfBold.eot');src:url('adi13wfBold.eot?#iefix') format('embedded-opentype'),url('adi13wfBold.woff') format('woff'),url('adi13wfBold.ttf') format('truetype');font-weight:normal;font-style:normal}

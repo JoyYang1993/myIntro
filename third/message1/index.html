@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .head{
+            width: 100%;
+            height: 140px;
+            background-color: #3c3c3c;
+        }
+        .left{
+            width: 150px;
+            height: 500px;
+            border-right: 2px solid  gray;
+            color: #ca2ea9;
+            float: left;
+        }
+        .right{
+            margin-left: 200px;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul,li{
+            width:120px;
+            text-align: center;
+            line-height: 50px;
+            list-style-type: none;
+        }
+    </style>
+    <script src="../../frameWork/AngularJS/angular.min.js"></script>
+    <script src="../../frameWork/AngularJS/angular-route.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/stu.js"></script>
+    <script src="js/tea.js"></script>
+    <script src="js/clazz.js"></script>
+</head>
+<body>
+<div class="head">
+    <h1>学生管理系统</h1>
+</div>
+<div class="left" >
+    <ul>
+        <li><a href="#/Student">学生管理</a> </li>
+        <li><a href="#/Teacher">教师管理</a> </li>
+        <li><a href="#/Clazz">班级管理</a> </li>
+    </ul>
+</div>
+<div class="right" ng-view></div>
+</body>
+</html>

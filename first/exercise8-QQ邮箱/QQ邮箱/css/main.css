@@ -1,0 +1,47 @@
+/* CSS Document */
+/*清除全局样式*/
+*{ margin:0; padding:0;}
+body{ margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;}
+a{ text-decoration:none; color:#03309D;}
+li{ list-style:none; float:left;}
+/*最外层div样式*/
+#outer{ width:810px; height:480px; margin:0 auto; margin-top:40px;}
+/*头部样式*/
+#header{ width:790px; height:38px;  margin:0 auto; margin-bottom:20px;}
+#logo{ width:183px; height:38px; background:url(../images/email_03.png) no-repeat center; float:left;}
+#header_nav{ width:590px; height:30px; background-color:#EAF3FF; float:right; margin-top:4px; border-radius:0 6px 6px 0;}
+#nav_{ width:240px; height:30px; float:right; margin-right:12px;}
+#nav_ li{ font-size:small; margin-top:5px; margin-left:4px;}
+.line{ color:#E7E0E0;}
+/*内容样式*/
+#content{ width:790px; height:334px; margin:0 auto; margin-bottom:30px; }
+#content_left{ width:372px; height:334px; float:left;}
+#content_l_top{ width:320px; height:212px;}
+#content_l_t_img{ width:141px; height:200px; background:url(../images/email_06.png) no-repeat center; float:left; margin-top:12px;}
+#content_l_t_word{ width:138px; height:184px; float:left; margin-top:28px; margin-left:41px; font-size:small; text-align:left; line-height:26px; vertical-align:bottom;}
+#qq{ color:#0E319D; font-size:larger; font-weight:bolder; margin-bottom:4px;}
+#picture{ font-size:x-small; margin-top:6px; }
+#content_l_bottom{ width:400px; height:60px;  margin-top:56px;}
+#content_l_bottom ul{ margin-left:15px;}
+#content_l_bottom li{ list-style:disc; float:none; font-size:small; color:#A098BE;}
+#content_right{ width:363px; height:334px; background-color:#EAF3FF; float:right; border-radius:12px 12px; border:1px solid #ACC3E4; }
+#content_right h3{ color:#2745A3; margin-top:18px; margin-left:20px; margin-bottom:18px;}
+#text{ width:175px; height:33px; border-radius:6px 6px; color:#808080;}
+#com{ width:120px; height:33px; margin-bottom:8px;border-radius:6px 6px;color:#808080;}
+#psw{ width:295px; height:33px;border-radius:6px 6px; margin-bottom:6px;color:#808080;}
+#rem{ font-size:small;}
+#repsw{ font-size:small; margin-left:150px; }
+#login{ width:80px; height:33px; background-color:#7AAF12; border-radius:5px 5px; margin-top:15px; margin-bottom:24px; cursor:pointer; border:1px solid #7AAF12; color:#FFF; border:1px solid #55850A; font-size:large;}
+#nomain{ color:#868686; }
+#other_{ margin-top:16px;}
+.other{ font-size:small;}
+form{ margin-left:20px;}
+/*底部样式*/
+#footer{ width:790px; height:55px; margin:0 auto;}
+#footer_nav{ width:790px; height:30px; background-color:#EAF3FF;}
+#nav__{ width:250px; height:30px; margin:0 auto;}
+#nav__ li{ font-size:small; margin-top:5px; margin-left:4px;}
+.line_{ color:#5E0066;}
+#copyright{ width:280px; height:20px;  margin:0 auto; }
+#copyright p{ font-size:x-small; text-align:center;}
+

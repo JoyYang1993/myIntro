@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#option{
+    position: fixed;
+    top: 100px;
+    left:350px;
+    opacity: 0.9;
+    z-index: 10001;
+    color: white;
+}
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+#one{
+    margin-left: 220px;
+    margin-bottom: 20px;
+}
+input[type=search]{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px 10px;
+    margin-right: 10px;
+}
+#one button{
+    height: 25px;
+    border-radius: 10px 10px;
+}
+table{
+    border-collapse: collapse;
+    width: 700px;
+    margin: auto;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+table th,table td{
+    border: 1px solid white;
+    width: 20%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#op{
+   margin-left: 230px;
+}
+#op button{
+    border-radius: 10px 10px;
+    width: 50px;
+    height: 25px;
+    margin-right: 20px;
+}

@@ -1,0 +1,52 @@
+<style>
+    table{
+        border-collapse: collapse;
+        width:600px;
+        margin: auto;
+    }
+    tr,td,th{
+        border: 1px solid gray;
+    }
+    button{
+        background-color: gray;
+        height: 30px;
+        width: 60px;
+    }
+
+</style>
+<h3></h3>
+<hr>
+<div>
+    按照姓名：<input type="text" ng-model="stu1.name">
+    按照年龄：<input type="text" ng-model="stu1.age">
+    按照性别查找<select ng-model="stu1.gender">
+    <option value="man" >男</option>
+    <option value="female">女</option>
+</select>
+    <table class="stuTbl">
+        <thead>
+        <tr>
+            <th>选择</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="stu in stus|filter:stu1">
+            <td><input type="checkbox" value="{{stu.id}}"></td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.age}}</td>
+            <td>{{stu.gender=='man'?'男':'女'}}</td>
+            <td ><button value="{{stu.id}}">删除</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <button ng-click="addStu()">添加</button>&nbsp;
+        <button ng-click="delStu()">删除</button>&nbsp;
+        <button ng-click="changeStu()">修改</button>&nbsp;
+    </div>
+
+</div>

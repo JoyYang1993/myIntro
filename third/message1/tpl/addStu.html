@@ -1,0 +1,27 @@
+<style>
+    div{
+        width: 800px;
+        margin: auto;
+
+    }
+    .addStu button{
+        float: right;
+        margin-right:50px;
+    }
+
+</style>
+<div class="addStu">
+    <button ng-click="backIndex()">返回</button>
+    <form ng-submit="addStu()">
+        姓名:<input type="text" ng-model="stu.name"><br>
+        年龄:<input type="text" ng-model="stu.age"><br>
+        性别:
+        <select ng-model="stu.gender">
+            <option value="man">男</option>
+            <option value="female">女</option>
+        </select>
+        <br>
+        <input type="submit" value="提交">
+        <input type="reset" value="重置"><br>
+    </form>
+</div>

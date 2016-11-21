@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		$(function(){
+			//1.如果有多选框就需要提前向后台发送请求，收到返回数据展示在页面
+			$.ajax('findClassName',{
+				dataType:'jsonp',
+				jsonp:'foo',
+				jsonpCallback:'addOption'
+			});
+			//2.向后台发送数据
+			$(':submit').on('click',function(){
+				//拿到输入框中的数据
+				var calssName = $('.sel').val();
+				var number = $(':input[name="number"]').val();
+				var name = $(':input[name="name"]').val();
+				var monitor = $(':input[name="monitor"]').val();
+				var str=calssName+':'+number+':'+name+':'+monitor;
+				//发送到后台
+				$.ajax('addClazz',{
+					dataType:'jsonp',
+					data:{str},
+					jsonp:'foo',
+					jsonpCallback:'jumpToClazz'
+				});
+			});
+
+		});
+		//2.添加成功后跳转到clazz.html
+		function jumpToClazz(data){
+			$('.tab_content').load('clazz/clazz.html');
+		}
+		//1.处理从后台返回的option数据
+		//[{},{},{}]
+		function addOption(data){
+			data.forEach(function(item){
+				console.log(item);//{},{},{}
+				for(var key in item){
+					var option = $('<option>'+item[key]+'</option>');
+					$('.sel').append(option);
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div id="inner">
+		<table>
+			<tr>
+				<td>班级名称</td>
+				<td>
+					<select class="sel">
+						<option>请选择</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>班级人数</td>
+				<td><input type="text" name="number"></td>
+			</tr>
+			<tr>
+				<td>班主任</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>班长</td>
+				<td><input type="text" name="monitor"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="提交">
+					<input type="reset" value="重置">
+				</td>	
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

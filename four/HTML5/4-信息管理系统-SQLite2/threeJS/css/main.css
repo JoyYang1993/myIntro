@@ -1,0 +1,52 @@
+body {
+    background-color: #ffffff;
+    margin: 0px;
+    overflow: hidden;
+    font-family:Monospace;
+    font-size:13px;
+    text-align:center;
+    text-align:center;
+    cursor: pointer;
+}
+
+a {
+    color:#0078ff;
+}
+
+#info {
+    color: #000;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+}
+table{
+    border-collapse: collapse;
+    width: 800px;
+    margin: auto;
+    line-height: 30px;
+    background-color: burlywood;
+    text-align: center;
+    margin-bottom: 20px;
+}
+table th,table td{
+    border: 1px solid darkgray;
+    width: 20%;
+}
+#one{
+    text-align: center;
+    margin-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#two{
+    margin-left: 600px;
+}
+button{
+    border-radius: 5px 5px;
+}

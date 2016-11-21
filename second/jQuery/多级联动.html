@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>多级联动</title>
+</head>
+<body>
+	年级:
+	<select name="grade" id="grade">
+		<option value="">请选择年级</option>
+	</select>
+	班级:
+	<select name="clazz" id="clazz" disabled="disabled">
+		<option value="">请选择班级</option>
+	</select>
+	学生:
+	<select name="student" id="student" disabled="disabled">
+		<option value="">请选择学生</option>
+	</select>
+</body>
+<script type="text/javascript">
+	//年级
+	var grade=document.getElementById("grade");
+	console.log(grade.children.length);
+	grade.onclick=function(){
+		var request=new XMLHttpRequest();
+		request.open("GET","grade.json");	
+		request.send(null);
+		request.onreadystatechange=function(){
+			if(request.readyState===4 && request.status===200){
+				var response=request.responseText;
+				showGradeData(response);
+			}
+		};
+	};
+	function showGradeData(data){
+		if(grade.children.length>=0&&grade.children.length<=1){
+			var re=JSON.parse(data);
+			//console.log(re);
+			re.forEach(function(item){
+				console.log(item.gradeId)
+				gradeId=item.gradeId;
+				console.log(gradeId);
+				//创建option
+				var option=document.createElement("option");
+				option.innerHTML=item.gradeName;
+				option.value=item.gradeId;
+				grade.appendChild(option);
+				console.log(grade.value);
+			});
+		}	
+	}
+	
+
+	//班级
+		var clazz=document.getElementById("clazz");
+		//console.log(clazz);
+		grade.onchange=function() {
+			clazz.removeAttribute("disabled");
+			clazz.onclick=function(){
+				var request=new XMLHttpRequest();
+				request.open("GET","clazz.json");	
+				request.send(null);
+				request.onreadystatechange=function(){
+					if(request.readyState===4 && request.status===200){
+						var response2=request.responseText;
+						showClazzData(response2, grade.value);
+					}
+				};
+			};
+		};
+		function showClazzData(data2, gradeId){
+			if(clazz.children.length>=0&&clazz.children.length<=1){
+				var re2=JSON.parse(data2);
+				//console.log(re2);
+				re2.forEach(function(item){
+					console.log(item);
+					//TODO: 判断年级的id是否和班级的id相等这个怎么做？？？？？？
+					if(gradeId==item.g_id){
+						//创建option
+						var option=document.createElement("option");
+						option.innerHTML=item.clazzName;
+						option.value = item.clazzId;
+						clazz.appendChild(option);
+					}	
+				});
+			}
+		}
+	
+	
+
+	//学生
+	var student=document.getElementById("student");
+	clazz.onchange=function(){
+		student.removeAttribute("disabled");
+		student.onclick=function(){
+			var request=new XMLHttpRequest();
+			request.open("GET","student.json");	
+			request.send(null);
+			request.onreadystatechange=function(){
+				if(request.readyState===4 && request.status===200){
+					var response3=request.responseText;
+					showStudentData(response3,clazz.value);
+				}
+			};
+		};
+	};
+	function showStudentData(data3,clazzId){
+		if(student.children.length>=0&&student.children.length<=1){
+			var re3=JSON.parse(data3);
+			re3.forEach(function(item){
+				if(clazzId==item["c_id"]){
+					//创建option
+					var option=document.createElement("option");
+					option.innerHTML=item.studentName;
+					student.appendChild(option);
+				}
+			});
+		}
+	}
+</script>
+</html>

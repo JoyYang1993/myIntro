@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementsByTagName('canvas')[0];
+            var context = canvas.getContext('2d');
+            context.beginPath();
+            var line = context.createLinearGradient(60,60,250,250);
+            line.addColorStop(0,'rgba(0,255,0,0.3)');
+            line.addColorStop(0.4,'rgba(0,0,255,0.2)');
+            line.addColorStop(1,'rgba(255,0,0,0.7)');
+            context.fillStyle = line;
+            var x=30;
+            var y=20;
+            var r=10;
+            for(var i=1;i<10;i++){
+                context.arc(x*i,y*i,r*i,0,Math.PI*2,true);
+                context.closePath();
+                context.fill();
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas width="400" height="400" style="background-color: antiquewhite"></canvas>
+</body>
+</html>

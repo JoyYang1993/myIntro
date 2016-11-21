@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/add.css">
+    <script src="frameWork/jquery.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/change.js"></script>
+</head>
+<body>
+    <header>
+        <h1>学生信息修改</h1>
+    </header>
+<article>
+    <section>
+        <form action="javascript:void(0)">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="one">编号</td>
+                        <td class="two">
+                            <input type="number" required id="number" name="number" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>姓名</td>
+                        <td>
+                            <input type="text" id="username" name="username">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性别</td>
+                        <td>
+                            <input type="radio" name="gender" value="男">男
+                            <input type="radio" name="gender" value="女">女
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            年龄
+                        </td>
+                        <td>
+                            <input type="number" min="0" id="age" name="age">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>生源地</td>
+                        <td>
+                            <input type="text" name="address" list="address">
+                            <datalist id="address">
+                                <option>山东</option>
+                                <option>兰州</option>
+                                <option>浙江</option>
+                                <option>河南</option>
+                            </datalist>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button>修改</button>
+                            <button><a href="listStu.html">返回</a></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+</article>
+<footer>
+        <small>
+            这是web1605班&nbsp;&nbsp;
+                更新时间 2016-10-31
+        </small>
+</footer>
+</body>
+</html>

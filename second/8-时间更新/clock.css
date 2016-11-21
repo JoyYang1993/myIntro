@@ -1,0 +1,18 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: lightgreen;
+}
+#outer{
+	width: 240px;
+	height: 85px;
+	border: 1px solid gray;
+	margin: auto;
+	padding-top: 15px;
+}
+#update{
+	margin-left: 50px;
+	margin-top: 10px;
+}

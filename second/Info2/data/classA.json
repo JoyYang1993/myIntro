@@ -1,0 +1,16 @@
+[{
+	"className":"三年级",
+	"classNumber":50,
+	"classTeacher":"joy",
+	"monitor":"lpen"
+},{
+	"className":"六年级",
+	"classNumber":70,
+	"classTeacher":"lpen",
+	"monitor":"tom"
+},{
+	"className":"二年级",
+	"classNumber":20,
+	"classTeacher":"vicky",
+	"monitor":"haha"
+}]

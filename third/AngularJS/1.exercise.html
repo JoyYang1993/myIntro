@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+    <style>
+        #outer{
+            width: 400px;
+            height:400px;
+            background-color: antiquewhite;
+            margin: auto;
+        }
+        #search{
+            width: 400px;
+            height:120px;
+            border-bottom: 3px solid orange;
+            text-align: center;
+        }
+        #table{
+            width: 400px;
+            height: 150px;
+            background-color: aqua;
+        }
+        table{
+            width:400px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th,td{
+            border: 1px solid orange;
+        }
+    </style>
+    <script src="../../frameWork/AngularJS/angular.min.js"></script>
+    <script>
+        //创建模块
+        var app = angular.module('myApp',[]);
+        //创建控制器
+        app.controller('oneController',function ($scope,$http) {
+            $http({
+                url:'stus.json',
+                method:'GET'
+            }).success(function (data) {
+                $scope.stus = data;
+                console.log($scope.stus);
+            });
+            $scope.expression = {
+                id:'',
+                name:'',
+                age:'',
+                gender:'',
+                score:''
+            };
+        });
+    </script>
+</head>
+<body ng-controller="oneController">
+    <div id="outer">
+        <div id="search">
+            按编号查询：<input type="text" ng-model="expression.id"><br>
+            按姓名查询：<input type="text" ng-model="expression.name"><br>
+            按年龄查询：<input type="text" ng-model="expression.age"><br>
+            按性别查询：<input type="text" ng-model="expression.gender"><br>
+            按分数查询：<input type="text" ng-model="expression.score"><br>
+        </div>
+        <div id="table">
+            <table>
+                <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>分数</th>
+                </tr>
+                <tr ng-repeat="stu in stus|filter:expression">
+                    <td>{{stu.id}}</td>
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.age}}</td>
+                    <td>{{stu.gender}}</td>
+                    <td>{{stu.score}}</td>
+                </tr>
+            </table>
+                按年龄降序：
+                <ul>
+                    <li ng-repeat="stu in stus|orderBy:'-age'">{{stu.name}}</li>
+                </ul>
+        </div>
+    </div>
+</body>
+</html>

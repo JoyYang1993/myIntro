@@ -1,0 +1,28 @@
+header{
+    text-align: center;
+}
+table{
+    width: 600px;
+    border-collapse: collapse;
+    margin: auto;
+    background-color: bisque;
+}
+table th,table td{
+    border: 1px solid darkgray;
+    text-align: center;
+    line-height: 30px;
+}
+.one{
+    width: 30%;
+}
+.two{
+    width: 70%;
+}
+footer{
+    text-align: center;
+    margin-top: 300px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

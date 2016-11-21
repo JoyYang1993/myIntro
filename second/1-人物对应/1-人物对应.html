@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		  //取到名字
+		  var name = prompt("请输入一个名字");
+      //截取字符串
+      var  firstName=  name.substr(0,1);
+      //console.log(firstName);
+      /*构建对象并且存储*/
+      var person1={
+      	 firstName1:"张",
+      	 age:"30",
+      	 name:"贝微微",
+      	 love:"游戏"
+      }
+      var person2={
+      	 firstName1:"王",
+      	 age:"34",
+      	 name:"肖奈",
+      	 love:"游戏"
+      }
+      var person3={
+      	 firstName1:"李",
+      	 age:"24",
+      	 name:"梦依然",
+      	 love:"臭美"
+      }
+      var person4={
+      	 firstName1:"赵",
+      	 age:"28",
+      	 name:"曹光",
+      	 love:"追女生"
+      }
+     var   perso=[person1,person2,person3,person4];
+
+     //拿到的firstName  和 数组中对象的firstName 匹配  
+   /*  for(var i =0;i<perso.length;i++){
+     	var  firstNa = perso[i]["firstName1"];
+     	 if(firstName==firstNa){
+     	 	 console.log(firstNa+perso[i]["age"]+perso[i]["name"]+perso[i]["love"]);
+     	 }
+     }
+*/
+
+     //哪一个随机数
+     var  num  = Math.random();
+     //让num 变为一个从 0  到 3【0,4)
+     num = Math.floor(num*4);
+     console.log(num);
+     var person = perso[num];
+    console.log(person["firstName1"]+person["age"]+person["name"]+person["love"])
+      	</script>
+</head>
+<body>
+	
+</body>
+</html>

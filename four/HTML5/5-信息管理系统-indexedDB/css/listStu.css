@@ -1,0 +1,27 @@
+header{
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    width: 800px;
+    margin: auto;
+    line-height: 30px;
+    background-color: bisque;
+    text-align: center;
+    margin-bottom: 20px;
+}
+table th,table td{
+    border: 1px solid darkgray;
+    width: 20%;
+}
+#one{
+    text-align: center;
+    margin-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#two{
+   margin-left: 600px;
+}

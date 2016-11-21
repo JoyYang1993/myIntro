@@ -1,0 +1,112 @@
+<script type="text/javascript">
+	$(function(){
+		$.getJSON('data/classA.json',function(data){
+			//展示数据  在显示的那个current的div中
+			//console.log(data);
+			showNum(data);
+		});
+		//第一步：ajax从后台请求数据
+		/*$.ajax('findAllClass',{
+			dataType:'jsonp',
+			jsonp:'foo',
+			jsonpCallBack:'showNum'
+		});*/
+		//第二步：全选和取消
+		$('.opt_btns :checkbox').on('click',function(event){
+			//console.log(this);
+			if($(this).prop('checked')){//prop常用于设置单值属性
+				$('tbody :checkbox').prop('checked','checked');
+			}else{
+				$('tbody :checkbox').removeAttr('checked');
+			}
+		});
+		//第三步：添加
+		$('.opt_btns button:eq(0)').on('click',function(){
+			$('.tab_content').load('clazz/addCalzz.html');
+		});
+		//第四步：删除
+		$('.opt_btns button:eq(2)').on('click',function(){
+			//1.拿到你选择的那个框的id
+			var check = $('tbody :checkbox:checked');
+			var val = check.map(function(item){
+				return item.value;
+			}).get().join();
+			//将这个id发送给后台，让人家帮你删除对应的这个id的数据
+			$.ajax('delClazz',{
+				dataType:'jsonp',
+				data:{val},
+				jsonp:'foo',
+				jsonpCallBack:'jumpToClazz'
+			});
+		});
+		//第五步：修改
+		$('.opt_btns button:eq(1)').on('click',function(){
+			//首先获得你选中的这个框的id
+			var id = $('tbody :checkbox:checked:eq(0)').val();
+			//其次跳转到修改页面
+			$('.tab_content').load('clazz/changeClazz.html');
+		});
+	});
+	//第四步删除成功后将页面直接跳转到clazz.html
+	function jumpToClazz(data){
+		$('.tab_content').load('clazz/clazz.html');
+	}
+	//第一步：处理从后台请求的数据
+	function showNum(data){
+		var tbody=$('.inner tbody');
+			//追加节点
+			//console.log(data);
+			tbody.empty();
+			data.forEach(function(item){
+				//console.log(item);[{},{},{}]
+				var tr=$('<tr></tr>');
+				var td=$('<td><input type="checkbox" value="1"></td>');
+				tr.append(td);
+				for(var key in item){//{}
+					var td=$('<td>'+item[key]+'</td>');
+					tr.append(td);
+				}
+				tbody.append(tr);
+			});
+	}
+</script>
+<!--班级管理-->
+		<div class="inner" title="data/classA.json">
+			<div class="selects">
+				<select name="" id="">
+					<option value="name">姓名</option>
+					<option value="clazz">班级</option>
+					<option value="grade">成绩</option>
+				</select>
+				<input type="text">
+				<input type="submit" value="search">
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>选择</th>
+						<th>班级名称</th>
+						<th>班级人数</th>
+						<th>班主任</th>
+						<th>班长</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+			<input type="checkbox">
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="opt_btns">
+				<input type="checkbox">
+				<button>添加</button>
+				<button>修改</button>
+				<button>删除</button>
+			</div>
+		</div>

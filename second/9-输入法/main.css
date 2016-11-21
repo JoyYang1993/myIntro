@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	list-style: none;
+}
+#outer{
+	width: 80px;
+	height: 100px;
+	margin: auto;
+	color: blue;
+}
+#input{
+	width: 80px;
+	height: 20px;
+	text-align: center;
+}
+#input_classify{
+	width: 60px;
+	height: 75px;
+	margin-left: 10px;
+	border: 1px solid blue;
+	text-align: center;
+	line-height: 25px;
+	display: none;
+}

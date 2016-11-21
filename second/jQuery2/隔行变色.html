@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery-2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			//记录原来没有变化之前的颜色
+			var color="";
+			var del=function(event){
+				$(event.target).remove();
+				//删除之后重新给颜色
+				$("li:even").css("background-color","red");
+				$("li:odd").css("background-color","yellow");
+			};
+			//让已经存在的li隔行变色
+			var obj={
+				mouseover:function(event){
+					//变色
+					color=$(event.target).css("background-color");
+					$(event.target).css("background-color","pink");
+
+				},
+				mouseout:function(event){
+					//恢复原色
+					console.log(color);
+					$(event.target).css("background-color",color)
+				}
+			};
+			$("li:even").css("background-color","red").bind(obj);
+			$("li:odd").css("background-color","yellow").bind(obj);
+			//$("li").bind(obj);
+
+			//添加
+			$("button").bind("click",function(){
+				var val=prompt("请输入一种水果：");
+				var $li=$("<li>"+val+"</li>");
+				$("ul").append($li);
+				//给刚刚添加的标签属性和方法、
+				//(1)方法
+				//因为事件已经存在的元素，事件已经绑定过了，再次绑定会有问题，因此先把所有的事件进行解绑，再重新绑定
+				/*$("li:even").unbind(obj);
+				$("li:odd").unbind(obj);
+				$("li:even").css("background-color","red").bind(obj);
+				$("li:odd").css("background-color","yellow").bind(obj);*/
+				//(2)方法 拿到追加节点的上一个兄弟节点，看看兄弟节点的颜色，跟他不一样即可
+				var col=$li.prev().css("background-color");
+				console.log(col);
+				$li.bind("dblclick",del);
+				if(col=="rgb(255,255,0)"){
+					$li.css("background-color","red").bind(obj);
+
+				}else{
+					$li.css("background-color","yellow").bind(obj);
+				}
+			});
+			//双击删除
+			$("li").bind("dblclick",del);
+
+		});
+	</script>
+	<style type="text/css">
+		li{
+			list-style: none;
+			border: 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+	<div id="outer">
+		<ul>
+			<li>列表1</li>
+			<li>列表2</li>
+			<li>列表3</li>
+			<li>列表4</li>
+			<li>列表5</li>
+			<li>列表6</li>
+		</ul>
+		<button>添加</button>
+	</div>
+</body>
+</html>

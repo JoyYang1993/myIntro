@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		$(function(){
+			//如果有下拉框，第一步先从后台请求数据展示在页面
+			//option里面的数据是后台响应给我们然后将它展示在页面上的，不是我们自己写上去的，所以提前我们应该请求数据，然后展示在页面上
+			$.ajax('findGrade',{//grade等级
+				dataType:'jsonp',
+				jsonp:'foo',
+				jsonpCallback:'addOption'
+			});
+			//其次向后台传入你要请求的那个老师的id，让后台返回给你这个id所对应的所有信息
+			//将我们点击的时候拿到的id当做value属性赋值给隐藏掉的那个input框
+			$(':hidden :input[type="text"]').attr('value',id);
+			//根据id去后台请求一个数据（学生信息）
+			$.ajax('findOnlyTeacher',{
+				dataType:'jsonp',
+				data:{id},
+				jsonp:'foo',
+				jsonpCallback:'oneTea'
+			});
+			//修改，将输入的数据传递到后台
+			$('button').on('click',function(){
+				//当点击修改的时候拿到每一个输入框中的内容
+				var username = $(':input[name="username"]').val();
+				var workage = $(':input[name="workage"]').val();
+				var salary = $(':input[name="salary"]').val();
+				var grade = $('select').val();
+				var str=username+':'+workage+':'+salary+':'+grade+':'+id;
+				//向后台发送数据
+				$.ajax('changeTea',{
+					dataType:'jsonp',
+					data:{str},
+					jsonp:'foo',
+					jsonpCallback:'jumpToTea'
+				});
+			});
+
+		});
+		//后台修改成功之后，跳转到tea.html
+		function jumpToTea(data){
+			$('.tab_content').load('teacher/tea.html');
+		}
+		//处理option
+		function addOption(data){
+			//[{}，{}，{}]
+			data.forEach(function(item){
+				console.log(item);//{},{},{}
+				for(var key in item){
+					var option=$('<option>'+item[key]+'</option>');
+					$('.sel').append(option);
+				}
+			});
+		}
+		function oneTea(data){
+			//处理响应回来的数据
+			//遍历数组，拿到数组中的每一项（每一个对象）
+			data.forEach(function(item){
+				console.log(item);
+				//声明一个空数组
+				var arr=[];
+				var i=0
+				for(var key in item){
+					//将拿到的每个对象中的属性放在数组中，取出对应的
+					arr[i]=item[key];
+					i++;
+				}
+				/*var name=arr[4];
+				var workage=arr[0];
+				var salary=arr[1];
+				var grade=arr[2];*///这一部分是不是得看后台传过来的数据之后才能确定？
+				//赋值
+				$(':disabled').val(name);
+				$(':input[name="workage"]').val(workage);
+				$(':input[name="salary"]').val(salary);
+				$('.sel').append($('<option>'+grade+'</option>'));
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="inner">
+		<table>
+			<tr style="display:none">
+				<td>id</td><br>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>姓名</td><br>
+				<td><input type="text" name="username" disabled="disabled"></td>
+			</tr>
+			<tr>
+				<td>工龄</td><br>
+				<td><input type="text" name="workage"></td>
+			</tr>
+			<tr>
+				<td>薪资</td><br>
+				<td><input type="text" name="salary"></td>
+			</tr>
+			<tr>
+				<td>等级</td><br>
+				<td>
+					<select class="sel">
+						<option>请选择</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button>修改</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

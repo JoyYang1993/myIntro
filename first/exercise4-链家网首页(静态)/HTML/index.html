@@ -1,0 +1,992 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>链家网</title>
+<link type="text/css" rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+	<!-- 头部div -->
+	<div id="header">
+		<!-- 上部分div -->
+		<div id="header_top">
+			<div id="logo"></div>
+			<div id="nav">
+				<ul>
+					<li><a href="#">二手房</a></li>
+					<li><a href="#">小区</a></li>
+					<li><a href="#">海外</a></li>
+					<li><a href="#">理财</a></li>
+					<li id="app"><a href="#">APP下载</a></li>
+					<li><a href="#">实房</a></li>
+				</ul>
+			</div>
+			<div id="log_in">
+				<form method="get" action="#">
+					<input type="submit" name="register" value="注册" /><span>|</span><input type="submit" name="log_in" value="登录" />					
+				</form>
+			</div>
+		</div>
+		<!-- 下部分div -->
+		<div id="header_bottom">
+			<div id="search">
+				<select name="serch_">
+					<option>二手房</option>
+				</select>
+				<input id="text" type="text" name="search_text" value="请输入区域板块或小区名开始找房" />
+				<input id="button" type="button" name="search__" value="搜索" />
+			</div>
+			<div id="map">
+				<div id="map_l"></div>
+				<div id="map_r">地图找房</div>
+			</div>
+		</div>
+	</div>
+	<!-- 内容div -->
+	<div id="content">
+		<div id="con_outer">
+			<!-- 定位div -->
+			<div id="location">
+				<div id="location_logo"></div>
+				<div id="location_"><a href="#">链家网苏州站</a> > <a href="#">苏州二手房</a></div>
+			</div>
+			<!-- 分类div -->
+			<div id="classify">
+				<div id="big_classify">
+					<div id="bc_left">
+						<ul>
+							<li id="bc_left1"><a href="#">全部二手房</a></li>
+							<li id="bc_left2"><a href="#">地铁房</a></li>
+							<li id="bc_left3"><a href="#">成交房源</a></li>
+						</ul>
+					</div>
+					<div id="bc_right"><a href="#">真实房源，假一赔百，不封顶！</a></div>
+				</div>
+				<div id="small_classify">
+					<table >
+						<colgroup width="50px"></colgroup>
+						<colgroup width="50px"></colgroup>
+						<colgroup width="800px"></colgroup>
+						<tbody>
+							<tr>
+								<td height="30px">区域：</td>
+								<td>不限</td>
+								<td>
+									<a href="#">高新</a>&nbsp;&nbsp;
+									<a href="#">姑苏</a>&nbsp;&nbsp;
+									<a href="#">吴中</a>&nbsp;&nbsp;
+									<a href="#">工业园区</a>&nbsp;&nbsp;
+									<a href="#">吴江</a>&nbsp;&nbsp;
+									<a href="#">高新</a>&nbsp;&nbsp;
+									<a href="#">姑苏</a>&nbsp;&nbsp;
+									<a href="#">吴中</a>&nbsp;&nbsp;
+									<a href="#">工业园区</a>&nbsp;&nbsp;
+									<a href="#">吴江</a>
+								</td>
+							</tr>
+							<tr>
+								<td height="30px">售价：</td>
+								<td>不限</td>
+								<td>
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<a href="#">100万以下</a>&nbsp;&nbsp;
+									<input type="text" name="quantity" />-<input type="text" name="quantity" />万
+									
+								</td>
+							</tr>
+							<tr>
+								<td height="30px">面积：</td>
+								<td>不限</td>
+								<td>
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<a href="#">50平米以下</a>&nbsp;&nbsp;
+									<input type="text" name="square" value="" />-<input type="text" name="square" value=""/>平
+								</td>
+							</tr>
+							<tr>
+								<td height="30px">户型：</td>
+								<td>不限</td>
+								<td>
+									<a href="#">一室</a>&nbsp;&nbsp;
+									<a href="#">一室</a>&nbsp;&nbsp;
+									<a href="#">一室</a>&nbsp;&nbsp;
+									<a href="#">一室</a>&nbsp;&nbsp;
+									<a href="#">一室</a>&nbsp;&nbsp;
+									<a href="#">一室</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="screen">
+					<table>
+						<colgroup width="50px"></colgroup>						
+						<tbody>
+							<tr>
+								<td>筛选：</td>
+								<td>
+									<form method="get" action="#">
+										<select name="screen">
+										<option>朝阳</option>
+										</select>&nbsp;&nbsp;
+										<select name="screen">
+											<option>朝阳</option>
+										</select>&nbsp;&nbsp;
+										<select name="screen">
+											<option>朝阳</option>
+										</select>&nbsp;&nbsp;
+										<select name="screen">
+											<option>朝阳</option>
+										</select>&nbsp;&nbsp;
+										<select name="screen">
+											<option>朝阳</option>
+										</select>&nbsp;&nbsp;
+									</form>
+									
+								</td>
+								<td>
+									<form method="get" action="#">
+										<input type="checkbox" name="train"  />地铁房
+									</form>
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="sort">
+					<table>
+						<tbody>
+							<tr>
+								<td width="50px">排序:</td>
+								<td width="50px" height="45px" bgcolor="#FFFFFF" align="center">默认</td>
+								<td width="310px">
+									<select name="sort">
+										<option>价格</option>
+									</select>
+									<select name="sort">
+										<option>价格</option>
+									</select>
+									<select name="sort">
+										<option>价格</option>
+									</select>
+								</td>
+								<td>最新</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- 城市div -->
+			<div id="city">
+				<div id="city_left">
+					<div id="cl_top">
+						<div id="clt_word">苏州</div>
+						<div id="clt_img"></div>
+					</div>
+					<div id="cl_bottom">苏州二手房在售与成交信息</div>
+				</div>
+				<div id="city_right">
+					<div id="right_1">
+						<p>城市挂牌均价</p>
+						<span>23189</span>元/平
+					</div>
+					<div class="right__"></div>
+					<div id="right_2">
+						<p>城市挂牌均价</p>
+						<span>23189</span>元/平
+					</div>
+					<div class="right__"></div>
+					<div id="right_3">
+						<p>城市挂牌</p>
+						<span>558</span>套
+					</div>
+					<div class="right__"></div>
+					<div id="right_4">
+						<p>昨日待看</p>
+						<span>23189</span>次
+					</div>
+				</div>
+			</div>
+			<!-- 主要内容div -->
+			<div id="impor_content">
+				<div id="impor_content_top">
+					<div id="ict_left">
+						<div id="ictl_left">
+							<table >
+								<tbody>
+									<tr>
+										<td width="25px"><img src="../images/home.png" /></td>
+										<td width="80px">实景图模式</td>
+										<td width="25px"><img src="../images/home1.png" /></td>
+										<td width="70px">湖景图模式</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="ictl_right"></div>
+					</div>
+					<div id="ict_right">共有<span>33170</span>套</div>
+				</div>
+				<div id="impor_content_middle">
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					<div class="con">
+						<div class="con1"></div>
+						<div class="con2">
+							<div class="con2_top">
+								<p class="hot_buy">火热出售，好房好心情，业主诚意出售，正规成熟小区</p>
+								<p class="hot_square">中海星湖国际&nbsp;&nbsp;3室2厅&nbsp;&nbsp;139.24平</p>
+								<p class="year_">工业园区&nbsp;玲珑|高层/30层|朝南北|2009年建</p>
+							</div>
+							<div class="con2_bottom">
+								<div class="con2_bo1">
+									<div class="con2bo1_left">
+										<div class="con2bo1_left_img"></div>
+									</div>
+									<div class="con2bo1_right">距离1号线时代广场站491米</div>
+								</div>
+								<div class="con2_bo2">
+									<div class="con2bo2_left">
+										<div class="con2bo2_left_img"></div>
+									</div>
+									<div class="con2bo2_right">满五</div>
+								</div>
+								<div class="con2_bo3">有钥匙</div>
+							</div>
+						</div>
+						<div class="con4">
+							<p><a href="#"><span>19</span>人</a></p>
+							<p class="look">看过此房</p>
+						</div>
+						<div class="con3">
+							<div class="con3_top"></div>
+							<div class="con3_bottom">
+								<p class="money_"><span class="money__">255</span><span class="wan">万</span></p>
+								<p class="price">25959元/平</p>
+							</div>
+						</div>					
+					</div>
+					
+				</div>
+				<div id="impor_content_bottom">
+					<div id="but">
+						<button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button>  ...<button class="100">100</button><button class="next">下一页</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- 底部div -->
+	<div id="footer">
+		<div id="contact">
+			<div id="contact_left">
+				<ul>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+					<li><a href="#">了解链家</a></li>
+				</ul>
+			</div>
+			<div id="contact_right">
+				<a href="#">服务热线：4007-001-001</a>
+			</div>
+		</div>
+		<hr id="line_one" />
+		<div id="hot">
+			<div id="hot_left"><a href="#">热门城市新房</a></div>
+			<div id="hot_middle"><a href="#">热门城市租房网</a></div>
+			<div id="hot_right"><a href="#">合作与友情链接</a></div>
+		</div>
+		<div id="cities">
+			<ul>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+				<li><a href="#">北京新房</a></li>
+			</ul>
+		</div>
+		<hr id="line_two" />
+		<div id="copyright">
+			<p>北京链家房地产经纪有限公司|网络经营许可证&nbsp;京ICP备11024601号-12</p>
+			<p>&copy;&nbsp;Copyright&copy;2010-2015链家网Lianjia.com版权所有</p>
+		</div>
+	
+	</div>
+</body>
+</html>

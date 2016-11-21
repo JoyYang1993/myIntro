@@ -1,0 +1,16 @@
+[{
+	"name":"joy",
+	"class_":"1班",
+	"gender":"female",
+	"score":90
+},{
+	"name":"larry",
+	"class_":"2班",
+	"gender":"male",
+	"score":80
+},{
+	"name":"lpen",
+	"class_":"3班",
+	"gender":"male",
+	"score":100
+}]

@@ -1,0 +1,92 @@
+<div class="editingarea">
+    <div class="c_flex"><span class="c_flexible"></span></div>
+    <div class="c_editview">
+        <div class="c_condition">
+            <span><select><option>题干</option></select></span>
+            <span class="pl5 " ><input type="text"></span>
+            <span class="pl15 pr15 btn_gray " style="border-radius: 20px 20px">输入关键字可自动查找</span>
+            <span class="icon_add">
+                <em class="icon_r">
+                    <!--  点击单个添加题目相应的模本添加进来 通过路由检测到路径的变化-->
+                    <a href="#/addSubject">单个添加题目</a>
+                </em>
+            </span>
+        </div>
+        <div class="divtable">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablea">
+                <tr>
+                    <td align="center">类型</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="" class="active3">全部</a>
+                            <a href="" ng-repeat="type in types">{{type.realName}}</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">难度</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="" class="active3">全部</a>
+                            <a href="" ng-repeat="level in levels">{{level.realName}}</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">方向</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="" class="active3">全部</a>
+                            <a href="" ng-repeat="department in departments">{{department.name}}</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">知识点</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="" class="active3">全部</a>
+                            <a href="" ng-repeat="topic in topics">{{topic.title}}</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Catalog">
+
+            <div class="Catalog_right">
+                <div class="Catalogtitle">
+                    总计<em>{{subjects.length}}</em>道题&nbsp;&nbsp;
+                    提示：单击可显示答案和解析&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="answer" /><b>显示答案和解析</b>&nbsp;&nbsp;
+                    <div><i>1</i><a href="" class="pageone">前</a><a href="" class="pagetwo">后</a></div>
+                </div>
+                <div class="Catalog_rightnei" ng-repeat="subject in subjects">
+                    <div class="Catalogtitwo">
+                        题号：{{subject.id}}&nbsp;&nbsp;
+                        题型：{{subject.subjectType.realName}}&nbsp;&nbsp;
+                        难度：{{subject.subjectLevel.realName}}&nbsp;&nbsp;
+                        上传人：{{subject.user}}&nbsp;&nbsp;
+                        来源：{{subject.examPaper}}&nbsp;&nbsp;
+                        上传时间:{{subject.uploadTime}}&nbsp;&nbsp;
+                    </div>
+                    <div class="Catalogcontent">
+                        <div class="Catalogcontentup">
+                            题目：{{subject.stem}}
+                           <div ng-repeat="choice in subject.choices">
+                                {{choice.number}}、&nbsp;{{choice.content}}
+                            </div>
+                            <div ng-show="answer">答案：{{subject.answer}}</div>
+                        </div>
+                        <div class="Catalogcontentdown">
+                            <a href="">审核通过</a>
+                            <a href="">审核不通过</a>
+                            <a href="">删除题目</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

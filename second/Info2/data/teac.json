@@ -1,0 +1,16 @@
+[{
+	"name":"joy",
+	"workAge":"2年",
+	"salary":6000,
+	"rank":2
+},{
+	"name":"lpen",
+	"workAge":"5年",
+	"salary":15000,
+	"rank":8
+},{
+	"name":"tom",
+	"workAge":"1年",
+	"salary":3000,
+	"rank":0
+}]

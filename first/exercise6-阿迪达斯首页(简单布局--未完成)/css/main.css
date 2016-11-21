@@ -1,0 +1,92 @@
+/* CSS Document */
+/* 清除全局样式 */
+body{margin:0px;padding:0px;}
+/* 头部样式 */
+.header{height:68px;background-color:#000000;}
+/* 头部LOGO样式 */
+.header .logo{width:78px; height:68px; float:left; margin-left:200px; margin-right:110px; background:url(../images/logo.png) no-repeat center;}
+/* 头部导航样式 */
+.header .nav{ width:380px; height:68px; float:left; margin-right:180px;}
+.header .nav ul{ margin-top:24px;}
+.header .nav li{ list-style:none; float:left; margin-right:12px; font-size:small; font-weight:bolder; color:#404040;}
+.header .nav .made{ margin-right:0px;}
+.header .nav li a{ text-decoration:none; color:#FFFFFF;}
+/* 头部搜索框及logo样式 */
+.header .search{ width:208px; height:36px;  float:right; margin-right:190px; margin-top:18px;}
+.header .search .text{ width:120px; height:36px; float:left; margin-right:14px; background-color:#FFFFFF;}
+.header .search .text .search_logo{ width:30px; height:35px; float:left; background:url(../images/s_logo.png) no-repeat center;}
+.header .search .text .textarea{ width:90px; height:35px; float:left;}
+.header .search .text .textarea input{ width:82px; height:28px; float:left; margin:4px auto; border:0px; text-align:center; }
+.header .search .img1{ width:30px; height:35px; float:left; margin-right:14px; background:url(../images/1.png) no-repeat center;}
+.header .search .img2{ width:30px; height:35px; background-color:#330099; float:left; background:url(../images/2.png) no-repeat center;}
+/* 广告栏样式 */
+.ad{height:530px;background-color:#FF3366; background:url(../images/ad.png) no-repeat center; margin-top:-10px;}
+
+/* 产品栏样式 */
+.product{height:2370px;background-color:#FFFFFF; margin-top:-10px;}
+
+.product .notice{ width:950px; height:64px; background-color:#3F3F3F; margin:0 auto; margin-bottom:12px; font-size:14px;}
+
+.product .product_one{ width:950px; height:330px; margin:0 auto; margin-bottom:50px;}
+.product .product_one .left{ width:470px; height:330px; float:left; margin-right:10px;}
+.product .product_one .left .top{ width:470px; height:260px; background-color:#99CC00;}
+.product .product_one .left .bottom{ width:470px; height:70px; background-color:#00CC33;}
+.product .product_one .right{ width:470px; height:330px; float:left;}
+.product .product_one .right .top{ width:470px; height:260px; background-color:#99CC00;}
+.product .product_one .right .bottom{ width:470px; height:70px; background-color:#00CC33;}
+
+.product .product_two{ width:950px; height:330px; margin:0 auto; margin-bottom:66px;}
+.product .product_two .left{ width:470px; height:330px; float:left; margin-right:10px;}
+.product .product_two .left .top{ width:470px; height:260px; background-color:#99CC00;}
+.product .product_two .left .bottom{ width:470px; height:70px; background-color:#00CC33;}
+.product .product_two .right{ width:470px; height:330px; float:left;}
+.product .product_two .right .top{ width:470px; height:260px; background-color:#99CC00;}
+.product .product_two .right .bottom{ width:470px; height:70px; background-color:#00CC33;}
+
+.product .product_three{ width:950px; height:510px; margin:0 auto; margin-bottom:185px;}
+.product .product_three .top{ width:326px; height:68px; background-color:#0066FF; margin:0 auto; margin-bottom:35px;}
+.product .product_three .middle{ width:198px; height:36px; background-color:#99FF99; margin:0 auto; margin-bottom:46px;}
+.product .product_three .bottom{ width:950px; height:340px; margin:0 auto;}
+.product .product_three .bottom .one,.two,.three,.four{ width:230px; height:340px; float:left; margin-right:10px;}
+.product .product_three .bottom .top{ width:230px; height:232px; background-color:#990099; margin-bottom:0px;}
+.product .product_three .bottom .bottom{ width:230px; height:108px; background-color:#99FF00;}
+.product .product_three .bottom .four{ margin-right:0;}
+
+
+
+
+
+.product .product_four{ width:950px; height:730px; margin:0 auto;}
+.product .product_four .title{ width:336px; height:38px; background-color:#00CC33; margin:0 auto; margin-bottom:8px;}
+.product .product_four .img{ width:950px; height:690px; background-color:#CC0066; margin:0 auto;}
+.product .product_four .top .left{width:476px; height:470px; background-color:#CC0000; float:left;}
+.product .product_four .top .right{ width:474px; height:470px; float:left; }
+.product .product_four .top .right .t{width:474px; height:236px; background-color:#003366;}
+.product .product_four .top .right .bo{width:474px; height:234px; background-color:#999900;}
+.product .product_four .bottom .left{ width:317px; height:220px; background-color:#99FF66; float:left;}
+.product .product_four .bottom .middle{ width:319px; height:220px; background-color:#CC0000; float:left;}
+.product .product_four .bottom .right{ width:314px; height:220px; background-color:#33FF66; float:left;}
+
+
+
+
+/* 底部信息栏样式 */
+.info .top{height:92px; background-color:#000000;}
+.info .top .weibo{ width:36px; height:34px; background-color:#990000; float:left; margin-top:40px; margin-left:196px;}
+.info .top .weixin{ width:36px; height:34px; background-color:#00CC33; float:left; margin-top:40px;}
+
+
+.info .middle{ height:493px; height:380px; background-color:#FFFFFF;}
+.info .middle .one{ width:144px; height:214px; background-color:#99CC66; float:left; margin-top:46px; margin-left:200px; margin-right:22px;}
+.info .middle .two{width:135px; height:215px; background-color:#CC0033; float:left; margin-top:46px; margin-right:56px;}
+.info .middle .three{ width:135px; height:160px; background-color:#00FF33; float:left; margin-top:46px; margin-right:28px;}
+.info .middle .four{  width:190px; height:155px; background-color:#FFFF33; float:left; margin-top:46px; margin-right:65px;}
+.info .middle .five{ width:156px; height:370px; background-color:#333399; float:left; margin-top:46px;}
+
+.info .bottom{ width:260px; height:36px; background-color:#99FF99; margin-left:200px;}
+
+
+/* 底部版权栏样式 */
+.copyright{height:40px;background-color:#363738;}
+.copyright .ch{ width:82px; height:40px; background-color:#99FF33; float:left; margin-left:200px;}
+.copyright .other{ width:486px; height:40px; background-color:#CC0000; float:right; margin-right:200px;}

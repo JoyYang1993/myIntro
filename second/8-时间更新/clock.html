@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>clock</title>
+	<link rel="stylesheet" type="text/css" href="clock.css">
+</head>
+<body>
+	<div id="outer">
+		<div id="time">
+			<img src="images/0.png" alt="">
+			<img src="images/0.png" alt="">
+			时
+			<img src="images/0.png" alt="">
+			<img src="images/0.png" alt="">
+			分
+			<img src="images/0.png" alt="">
+			<img src="images/0.png" alt="">
+			秒
+		</div>
+		<button id="update">更新时间</button>
+		<button id="stop">停止时间</button>
+	</div>	
+</body>
+<script type="text/javascript">
+	//(1)获取元素
+	var imgs=document.getElementsByTagName("img");//类数组
+	//console.log(imgs);
+	//console.log(imgs.length);
+	//console.log(imgs);
+	var btn=document.getElementsByTagName("button");//类数组
+	//console.log(btn[1]);
+	//console.log(btn);
+	var id=0
+	//(2)绑定事件
+	btn[0].onclick=function(){
+		id=setInterval(function(){
+			//更新时间
+			var now=new Date();
+			//console.log(now.getHours());
+			//拿到时间(如果大于等于10，直接以字符串的形式输出；反之，在前面拼接"0",再输出)
+			var time=changeTime(now.getHours())+changeTime(now.getMinutes())+changeTime(now.getSeconds());
+			//console.log(time);
+			//放上图片
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].src="images/"+time.charAt(i)+".png";
+			}
+
+		},30);
+	};
+	btn[1].onclick=function(){
+		clearInterval(id);
+	};
+
+function changeTime(num){
+	if(num>=10){
+		return num+"";
+	}else{
+		return "0"+num;
+	}
+}
+</script>
+</html>

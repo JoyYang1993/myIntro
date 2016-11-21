@@ -1,0 +1,117 @@
+
+	<script type="text/javascript">
+		$(function(){
+			$.getJSON('data/stus.json',function(data){
+				//展示数据  在显示的那个current的div中
+				//console.log(data);
+				showNum(data);
+			});
+			/*$.ajax('findAllStudent',{
+				dataType:'jsonp',
+				jsonp:'foo',
+				jsonpCallback:'showNum'
+			});*/
+			//如果没有跨域问题,直接用get()  post()  getJSON()
+
+			//全选和取消
+			$('.opt_btns :checkbox').change(function(event){
+				//console.log(this);
+				if($(this).prop('checked')){
+					$('tbody :checkbox').prop('checked','checked');
+				}else{
+					$('tbody :checkbox').removeAttr('checked');
+				}
+			});
+			//添加
+			$('.opt_btns button:eq(0)').click(function(){
+				$('.tab_content').load('student/addStu.html');
+			});
+			//删除
+			$('.opt_btns button:eq(2)').on('click',function(){
+				//1.选择到需要删除的信息
+				var check = $('tbody :checkbox:checked');
+				console.log(check);//[{2},{3}]
+				var val=check.map(function(item){
+					console.log(item);//{2},{3}
+					return item.value;//value就是后台传过来的id
+				}).get().join();
+				console.log(val);
+				//2.给后台发送请求，要求删除该部分信息
+				$.ajax('delStu',{
+					dataType:'jsonp',
+					jsonp:'foo',
+					data:{val},
+					jsonpCallback:'delSuccess'
+				});
+			});
+			//修改
+			$('.opt_btns button:eq(1)').on('click',function(){
+				var id = $('tbody :checkbox:checked:eq(0)').val();
+				console.log(id);
+				$('.tab_content').load('student/changeStu.html');
+			});
+		});
+		//删除成功后的方法
+		function delSuccess(data){
+			alert(data);
+			$('.tab_content').load('student/stu.html');
+		}
+		function showNum(data){
+			var tbody=$('.inner tbody');
+				//追加节点
+				//console.log(data);
+				tbody.empty();
+				data.forEach(function(item){
+					//console.log(item);
+					var tr=$('<tr></tr>');
+					var td=$('<td><input type="checkbox" value="item.id"></td>');
+					tr.append(td);
+					for(var key in item){
+						var td=$('<td>'+item[key]+'</td>');
+						tr.append(td);
+					}
+					tbody.append(tr);
+				});
+		}
+	</script>
+
+	<!--学生管理-->
+			<div class="inner" title="data/stus.json">
+				<div class="selects">
+					<select name="" id="">
+						<option value="name">姓名</option>
+						<option value="clazz">班级</option>
+						<option value="grade">成绩</option>
+					</select>
+					<input type="text">
+					<input type="submit" value="search">
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>选择</th>
+							<th>姓名</th>
+							<th>班级</th>
+							<th>性别</th>
+							<th>分数</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+				<input type="checkbox">
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="opt_btns">
+					<input type="checkbox">
+					<button>添加</button>
+					<button>修改</button>
+					<button>删除</button>
+				</div>
+			</div>

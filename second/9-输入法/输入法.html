@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>输入法</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div id="outer">
+		<div id="input">输入法</div>
+		<div id="input_classify">
+			<ul>
+				<li>手写</li>
+				<li>拼音</li>
+				<li>口语</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var input=document.getElementById("input");
+	var input_classify=document.getElementById("input_classify");
+	var ul=document.getElementsByTagName("ul")[0];
+	//console.log(ul);
+	input.onclick=function(event){
+		if(input_classify.style.display=="block"){
+			input_classify.style.display="none";
+		}else{
+			input_classify.style.display="block";
+		}	
+	};
+	ul.onmouseover=function(event){
+		console.log(event.target);
+		event=event.target;
+		event.style["background-color"]="lightblue";
+	};
+	ul.onmouseout=function(event){
+		event=event.target;
+		event.style["background-color"]="";
+	};
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		 //第一种方式  分别给每个标签 添加backgroundColor
+		 //第二种方式： 给奇数添加className 给个样式
+		 //再给偶数添加className  在给个样式 
+		//方式三
+		var  li = document.getElementsByTagName('li');
+		//类数组   要for   先转换为数组 ，forEach 
+		for(var i=0;i<li.length;i++){
+            if(i%2==0){
+                   li[i].style["background-color"]="red";
+            }else{
+                li[i].style["background-color"]="green";
+            }
+		}
+        var btu = document.getElementsByTagName("button");
+        btu[0].onclick=function(){
+           //创建节点
+           var node = document.createElement("li");
+
+           //追加  父节点
+           var   ul = document.getElementsByTagName("ul")[0];
+           ul.appendChild(node);
+           //添加样式
+           var  name = prompt("请输入一种水果");
+           //判断什么颜色
+           //方式一:根据追加的节点 拿到一个 上一个兄弟节点 然后拿到backgroundColor属性 ，判断该属性是什么颜色
+           //
+           var  li1 = document.getElementsByTagName("li");
+
+      if(li1.length%2==0){
+           node.style.backgroundColor="green"
+      }else{
+      	   node.style.backgroundColor="red"
+
+      }
+         node.innerHTML=name;
+        }
+
+
+
+        btu[1].onclick=function(){
+            var  li  = document.getElementsByTagName("li");
+            var  ul =document.getElementsByTagName("ul")[0];
+            ul.removeChild(li[li.length-1]);
+        }
+
+	}
+   
+	</script>
+</head>
+<body>
+	  <ul>
+	  	 <li>苹果</li>
+	  	 <li>香蕉</li>
+	  	 <li>梨</li>
+	  	 <li>葡萄</li>
+	  	 <li>柿子</li>
+	  </ul>
+	  <button>添加</button>
+	  <button>删除</button>
+</body>
+</html>

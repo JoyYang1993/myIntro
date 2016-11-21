@@ -1,0 +1,96 @@
+/*全局属性*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*清除li样式*/
+li{
+	list-style: none;
+	float: left;
+}
+/*清除a标签样式*/
+a{
+	text-decoration: none;
+}
+/*设置每个大div的宽度*/
+div{
+	width: 100%;
+}
+/*头部*/
+#header{
+	height: 50px;
+	background-color: black;
+}
+/*广告栏*/
+/*广告栏导航*/
+#ad_nav{
+	width: 30%;	
+	float: left;
+}
+/*导航标题*/
+#ad_nav_top{
+	 width: 100%;
+	 height: 50px;
+	 background-color: #FFAACC;
+	
+}
+/*导航标题的每个li*/
+#ad_nav_top li{
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+
+}
+	
+/*导航内容*/
+.ad_nav_bottom{
+	width: 100%;
+	height: 328px;
+	background-color: #FFFFCC;
+	padding-top: 20px;
+	display: none;
+}
+
+/*广告栏内容*/
+#ad_{
+	width: 70%;	
+	float: right;
+}
+/*广告栏内容左侧按钮*/
+#l_btn{
+	width:10%;
+	height: 400px;
+	background-color: #55CCFF;
+	float: left; 
+}
+/*图片的div*/
+#img{
+	width: 80%;
+	height: 400px;
+	background-color: #EEAACC;
+	float: left;
+}
+/*图片的属性*/
+#picture{
+	width: 800px;
+	height: 400px;
+}
+/*广告栏内容右侧按钮*/
+#r-btn{
+	width:10%;
+	height: 400px;
+	background-color: #55CCFF;
+	float: right;
+}
+/*内容*/
+#content{
+	height: 1000px;
+	background-color: blue;
+}
+/*底部*/
+#footer{
+	height: 100px;
+	background-color: gray;
+}
+		

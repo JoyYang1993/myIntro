@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementsByTagName('canvas')[0];
+            var context = canvas.getContext('2d');
+            //封装一个方法
+            function clock() {
+                //拿到时分秒
+                var date = new Date();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                hour=hour+minute/60;
+                minute = minute+second/60;
+                /*console.log(hour);
+                console.log(minute);
+                console.log(second);*/
+                //画一个表盘
+                context.fillStyle = 'pink';
+                //context.strokeStyle = 'black';
+                context.beginPath();
+                context.arc(200,200,100,0,Math.PI*2,true);
+                context.closePath();
+                context.fill();
+                //context.stroke();
+                //时刻度线
+                for(var i=1;i<=12;i++){
+                    context.save();
+                    context.translate(200,200);
+                    context.strokeStyle = 'white';
+                    context.lineWidth = 2;
+                    context.fillStyle = 'white';
+                    context.rotate(i*30*Math.PI/180);
+                    context.font = 'normal small-caps bold 15px cursive';
+                    context.fillText(i,-5,-70);
+                    context.beginPath();
+                    context.moveTo(0,-100);
+                    context.lineTo(0,-85);
+                    context.closePath();
+                    context.stroke();
+                    context.restore();
+                }
+                //分刻度线
+                for(var i=1;i<=60;i++){
+                    context.save();
+                    context.translate(200,200);
+                    context.strokeStyle = 'white';
+                    context.lineWidth = 2;
+                    context.rotate(i*6*Math.PI/180);
+                    context.beginPath();
+                    context.moveTo(0,-100);
+                    context.lineTo(0,-93);
+                    context.closePath();
+                    context.stroke();
+                    context.restore();
+                }
+                //设置时针
+                context.save();
+                context.translate(200,200);
+                context.rotate(hour*30*Math.PI/180);
+                context.strokeStyle = 'white';
+                context.lineWidth = 2;
+                context.beginPath();
+                context.moveTo(0,-5);
+                context.lineTo(0,-30);
+                context.closePath();
+                context.stroke();
+                context.restore();
+                //设置分针
+                context.save();
+                context.translate(200,200);
+                context.rotate(minute*6*Math.PI/180);
+                context.strokeStyle = 'white';
+                context.lineWidth = 2;
+                context.beginPath();
+                context.moveTo(0,-5);
+                context.lineTo(0,-50);
+                context.closePath();
+                context.stroke();
+                context.restore();
+                //设置秒针
+                context.save();
+                context.translate(200,200);
+                context.rotate(second*6*Math.PI/180);
+                context.strokeStyle = 'white';
+                context.lineWidth = 2;
+                context.beginPath();
+                context.moveTo(0,-5);
+                context.lineTo(0,-75);
+                context.closePath();
+                context.stroke();
+                context.restore();
+                //画圆心（时分秒针的交叉点）
+                context.save();
+                context.translate(200,200);
+                context.fillStyle = 'white';
+                context.arc(0,0,5,0,Math.PI*2,true);
+                context.fill();
+                context.restore();
+            }
+            context.clearRect(0,0,400,400);
+            clock();
+            setInterval(clock,1000);
+        }
+    </script>
+</head>
+<body>
+    <canvas width="400" height="400"></canvas>
+</body>
+</html>

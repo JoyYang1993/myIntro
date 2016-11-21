@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>学生信息管理系统</title>
+	<script type="text/javascript" src="js/jquery-2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		*{margin: 0;padding: 0; color:#000; font-family: "微软雅黑 宋体"; font-size: 14px;}
+		a{text-decoration: none;}
+		.content{text-align: center}
+		.tab_header{ width: 600px; margin:0 auto;border: 1px solid #ccc; }
+		ul{
+			height: 30px;
+		}
+		ul li{
+			list-style: none;
+			float: left;
+			line-height: 30px;
+			width:100px;
+			text-align: center;
+			border-right: 1px solid #ccc;
+			cursor: pointer;
+		}
+		li.current{
+			position: relative;
+			border-bottom:1px solid #FFF;
+			bottom: 0px;
+			background-color: #FFF;
+		}
+		.tab_content{
+			width: 600px;
+			border: 1px solid #ccc;
+			border-top:none;
+			margin: 0 auto;
+			height: 400px;
+			text-align: left;
+			
+		}
+		.inner{
+			padding: 10px 20px;
+			height: 100%;
+			position: relative;
+		}
+
+		.inner table{
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.inner table td,.inner table th{
+			border: 1px solid #ccc;
+			text-align: center;
+		}
+		.opt_btns{
+			position: absolute;
+			bottom: 30px
+		}
+		.selects{
+			margin: 5px 0;
+		}
+	</style>
+	<script type="text/javascript">
+		var id='';
+		$(function(){
+			//第一种：在页面加载后立即发送一个ajax请求到一个页面，load进来
+			/*$('.tab_content').load('teacher/tea.html');*/
+			//解绑事件
+			$('.tab_header ul').off('mouseover');
+			$('.tab_header ul').on('mouseover','li',function(event){
+				if(!$(this).hasClass('current')){
+					$(this).addClass('current').siblings().removeClass('current');
+					//url
+					var url=$(this).attr('val');
+					console.log(url);
+					$('.tab_content').load(url);
+				}
+				var id='';
+			});
+			//第二种：模拟一个鼠标移入事件
+			$(document).ready(function(){
+				//在页面加载完成之后模拟一个鼠标移入事件
+				$('.tab_header li:eq(0)').trigger('mouseover');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="content">
+		<h1>学生信息管理系统</h1>
+		<div class="tab_header">
+			<ul>
+				<li val="student/stu.html">
+					<a href="javascript:void(0);">学生信息</a>
+				</li>
+				<li val="teacher/tea.html" class="current">
+					<a href="javascript:void(0);">教师信息</a>
+				</li>
+				<li val="clazz/clazz.html">
+					<a href="javascript:void(0);">班级信息</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab_content" id="one">			
+		</div>
+	</div>
+</body>
+</html>

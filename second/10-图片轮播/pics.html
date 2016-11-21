@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript实现图片切换显示幻灯片动画效果</title>
+<style type="text/css">
+.img_left{width:156px; float:left; margin:0 0 30px 0; padding:10px 0; text-align:center; border:1px solid #34538b; list-style-type:none;}
+.img_left li{padding-top:14px; padding-bottom:5px;}
+.img_left li a img{padding:1px; border:2px solid white;}
+.img_left li a.on img{border-color:#0CF;}
+.img_right{width:522px; margin-left:10px; margin-bottom:30px; float:left; border:1px solid #34538b; height:392px; position:relative; overflow:hidden;}
+.img_move{width:522px; padding:0; margin:0; position:absolute; left:5px; top:0px; list-style:none; font-size:0;}
+.img_move li{height:390px; text-align:center;}
+.img_move li img{vertical-align:middle;}
+.img_move li span{display:inline-block; width:1px; height:100%; vertical-align:middle;}
+.ad{float:left; margin-left:15px;}
+.bottom{padding:40px 0; margin-top:20px; clear:both; text-align:center; font-size:12px;}
+a{color:#34538b; text-decoration:underline;}
+a:hover{color:#f30;}
+#imageLeft img{
+	width: 128px;
+	height: 96px;
+	
+}
+#imageMove img{
+	width: 512px;
+	height: 381px;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var oMove = document.getElementById("imageMove");
+	//运动函数
+	function funMove(pos){
+		var move = function(){
+			var curPos = parseInt(oMove.style.top,10);
+			var speed = 60;
+			if(Math.abs(curPos-pos)>speed){
+				//判断移动方向
+				curPos-=((curPos-pos)/Math.abs(curPos-pos))*speed;  
+				oMove.style.top = curPos+"px";
+				setTimeout(move,30);
+			}else{
+				oMove.style.top = pos + "px";
+			}
+		};
+		setTimeout(move,10);
+	};
+	var oClick = document.getElementById("imageLeft").getElementsByTagName("a");
+	for(var i=0; i<oClick.length; i+=1){
+		var flag = 0;
+		var timeout;
+		//鼠标经过播放动画
+		oClick[i].onmouseover = function(i){
+			return function(e){
+				clearTimeout(timeout);
+				oClick[flag].className = "";
+				this.className = "on";
+				funMove(-390*i);
+				flag = i;
+			}
+		}(i);
+		oClick[i].onmouseout = function(i){
+			return function(e){
+				timeout = setTimeout(step,4000);
+			}
+		}(i);
+		//定时器播放动画
+		if(i === 0){
+			var step = function(){
+				oClick[flag].className = "";
+				flag = flag>=oClick.length-1?0:flag+1;
+				oClick[flag].className = "on";
+				funMove(-390*flag);
+				timeout = setTimeout(step,4000);
+			};
+			setTimeout(step,4000);
+		}
+	}
+};
+</script>
+</head>
+
+<body>
+<ul id="imageLeft" class="img_left">
+	<li>
+    	<a href="#" class="on">
+    		<img src="a.jpg" /></a>
+    </li>
+    <li>
+    	<a href="#">
+    		<img src="b.jpg" /></a>
+    </li>
+    <li>
+    	<a href="#">
+    		<img src="c.jpg" /></a>
+    </li>
+</ul>
+<div class="img_right">
+	<ul id="imageMove" class="img_move" style="top:0px;">
+    	<li>
+        	<img src="a.jpg" />
+            <span></span>
+        </li>
+    	<li>
+        	<img src="b.jpg" />
+            <span></span>
+        </li>
+        <li>
+        	<img src="c.jpg" />
+            <span></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

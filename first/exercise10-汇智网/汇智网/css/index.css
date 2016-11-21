@@ -1,0 +1,426 @@
+/*全局样式*/
+article,section,header,footer,nav,address{
+    display: block;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+body{
+    background-color:white ;
+}
+
+/*头部样式*/
+header{
+    height: 650px;
+    background: url("../images/index/bg.png") no-repeat center;
+    position: relative;
+    top:0px;
+    left:0px;
+}
+/*头部LOGO和导航*/
+div.nav_L{
+    width: 800px;
+    height:70px;
+   /* background-color: darkorange;*/
+    position: absolute;
+    top: 0px;
+    left:60px;
+}
+div.logo{
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+div.nav_L ul{
+    float: left;
+   /* background-color: #4C4C4C;*/
+}
+div.nav_L ul li{
+    width: 65px;
+    height: 50px;
+    font-size: x-small;
+    text-align: center;
+    line-height: 50px;
+   /* background-color: darkmagenta;*/
+}
+div.nav_L ul li:hover{
+    background-color: darkslategrey;
+}
+#cloud{
+    width: 80px;
+    height:30px;
+    background-color: #57BB90;
+    float: left;
+    margin-top: 12px;
+    border-radius: 5px;
+    border: 2px solid #48D6CE;
+    cursor: pointer;
+    font-size: x-small;
+}
+/*登录和注册*/
+div.nav_R{
+    width: 150px;
+    height:50px;
+   /* background-color: blueviolet;*/
+    position: absolute;
+    top:0px;
+    right: 60px;
+}
+div.nav_R li{
+    font-size: x-small;
+    width: 65px;
+    height: 50px;
+   /* background-color: #00D1FE;*/
+    text-align: center;
+    line-height: 50px;
+}
+div.nav_R li img{
+    margin-right: 3px;
+}
+div.nav_R li:hover{
+    background-color: darkslategrey;
+}
+/*背景图片上的按钮*/
+#startStudy{
+    width: 200px;
+    height:55px;
+    background-color: #676666;
+    border: 0px;
+    line-height: 55px;
+    position: absolute;
+    top:440px;
+    left:460px;
+    border-radius: 5px;
+}
+#startStudy img{
+    position: absolute;
+    top:15px;
+    left: 60px;
+}
+#startStudy span{
+    margin-left: 50px;
+}
+#startStudy:hover{
+    background-color: steelblue;
+}
+/*内容样式*/
+div.croll,div.tool{
+    height: 350px;
+    background-color: #F5F5F5;
+}
+/*左右箭头*/
+div.croll_L,div.croll_R{
+    width: 40px;
+    height: 40px;
+    background-color: cadetblue;
+    float: left;
+    margin-right: 10px;
+    margin-top: 150px;
+}
+div.croll_L{
+    margin-left: 20px;
+    background: url("../images/index/rowL.png") no-repeat center;
+}
+div.croll_R{
+    background: url("../images/index/rowR.png") no-repeat center;
+}
+/*书籍介绍*/
+div.book{
+    width: 190px;
+    height: 295px;
+    background-color: white;
+    float: left;
+    margin-right: 10px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+div.book div.picture{
+    width: 170px;
+    height:180px;
+  /*  background-color: darkmagenta;*/
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+div.book div.word{
+    width: 170px;
+    height: 95px;
+   /* background-color: slateblue;*/
+    float: left;
+    margin-left: 10px;
+}
+div.book div.word h4{
+    color: #4C4C4C;
+}
+div.book div.word h4:hover{
+    color: #00D1FE;
+}
+div.book div.word p{
+    font-size: 14px;
+    color: #999999;
+}
+div.book div.word p:hover{
+    color: #00D1FE;
+}
+/*不用搭建学习环境*/
+div.envi{
+    height:370px;
+    background-color: white;
+}
+div.pc{
+    width: 300px;
+    height: 295px;
+    /*background-color: deeppink;*/
+    float: left;
+    margin-top: 40px;
+    margin-left: 60px;
+    background: url("../images/index/pc.png") no-repeat center;
+}
+div.envi_W{
+    width: 700px;
+    height:300px;
+   /* background-color: lightseagreen;*/
+    float: right;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+div.envi_W div.word{
+    width: 700px;
+    height:130px;
+   /* background-color: brown;*/
+    margin-bottom: 10px;
+}
+div.envi_W div.word p{
+    font-size: 17px;
+    color: black;
+}
+#topic1{
+    font-size: 25px;
+}
+div.envi_W div.picture{
+    width: 700px;
+    height:55px;
+    /*background-color: darkgreen;*/
+}
+#piStart{
+    margin-left: 5px;
+}
+#p1{
+   /* background-color: green;*/
+}
+#p1 img{
+    margin-right: 8px;
+}
+#piEnd{
+    margin-right: 0px;
+}
+#p2{
+   /* background-color: mediumblue;*/
+}
+
+#p3{
+    /*background-color: orange;*/
+}
+#p3 img{
+    margin-right: 4px;
+}
+#pi3End{
+    margin-right: 0px;
+}
+/*随处可见的云端练习工具*/
+div.tool_L{
+    width: 500px;
+    height:250px;
+    /*background-color: #57BB90;*/
+    float: left;
+    margin-top: 40px;
+    margin-left: 70px;
+}
+div.tool_L div.word{
+    width: 500px;
+    height: 150px;
+    /*background-color: firebrick;*/
+}
+div.tool_L div.word p{
+    color: black;
+}
+#topic2{
+    font-size: 25px;
+}
+div.tool_L div.picture{
+    width: 500px;
+    height:100px;
+  /*  background-color: orange;*/
+}
+div.tool_L div.picture .pict1{
+    width: 70px;
+    height:80px;
+   /* background-color: hotpink;*/
+    float: left;
+    margin-right: 60px;
+}
+#free{
+    margin-bottom: 7px;
+}
+div.tool_L div.picture p{
+    font-weight: bold;
+    color: #00D1FE;
+}
+div.tool_R{
+    width: 370px;
+    height: 270px;
+   /* background-color: darkgoldenrod;*/
+    float: right;
+    margin-top: 40px;
+    margin-right: 60px;
+    background: url("../images/index/lifelove.png") no-repeat center;
+}
+/*图书也可以互动*/
+div.interact{
+    height: 405px;
+    background-color: white;
+}
+div.inter_T{
+    width: 700px;
+    height:140px;
+    /*background-color: #57BB90;*/
+    margin-left: 220px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 35px;
+}
+div.inter_T p{
+    color: black;
+}
+#topic3{
+    font-size: 25px;
+}
+div.inter_BO{
+    width: 790px;
+    height: 200px;
+   /* background-color: darkgoldenrod;*/
+    margin-left: 170px;
+    background: url("../images/index/bg2.png") no-repeat center;
+}
+
+/*底部样式*/
+footer{
+    height: 490px;
+    background-color: #343C3F;
+    position: relative;
+    top:0px;
+    left:0px;
+}
+/*汇智网简介*/
+div.intro{
+    width: 300px;
+    height: 220px;
+   /* background-color: #57BB90;*/
+    float: left;
+    margin-right: 100px;
+    margin-left: 60px;
+}
+#logo2{
+    margin-bottom: 25px;
+}
+div.intro p{
+    margin-bottom: 30px;
+    color: #C2C3C3;
+    font-size: 14px;
+}
+
+div.linkAll img{
+    margin-right: 20px;
+}
+/*友情链接*/
+div.link{
+    width: 130px;
+    height: 240px;
+   /* background-color: lawngreen;*/
+    float: left;
+    margin-right: 90px;
+}
+div.link li{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+div.link li a{
+    color: #C2C3C3;
+}
+div.link li a:hover{
+    color: #00D1FE;
+}
+#linkTopic{
+    font-size: 13px;
+    color: #C2C3C3;
+}
+/*服务于支持*/
+div.server{
+    width: 90px;
+    height: 265px;
+   /* background-color: firebrick;*/
+    float: left;
+    margin-right: 125px;
+}
+div.server li{
+    display: block;
+    margin-bottom: 18px;
+    font-size: 14px;
+   /* background-color: #00D1FE;*/
+}
+div.server li a span:hover{
+    color: #00D1FE;
+}
+#serverAnd{
+    font-size: 13px;
+    color: #C2C3C3;
+}
+div.server li img{
+    margin-right: 5px;
+    float: left;
+}
+div.server li span{
+    line-height: 10px;
+    color: #C2C3C3;
+}
+/*微信订阅号*/
+div.WX{
+    width: 160px;
+    height: 165px;
+  /*  background-color: darkblue;*/
+    float: left;
+}
+div.WX p{
+    font-size: 13px;
+    color: #C2C3C3;
+    margin-bottom: 20px;
+}
+div.intro,div.link,div.server,div.WX{
+    margin-top: 60px;
+}
+/*底部版权*/
+div.copy{
+    width: 1000px;
+    height:90px;
+    border-top: 2px solid #465155;
+    position: absolute;
+    top:395px;
+    left:60px;
+    font-size: smaller;
+    text-align: center;
+    line-height: 90px;
+    color:#C2C3C3 ;
+   /* background-color: #00D1FE;*/
+}

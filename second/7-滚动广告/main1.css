@@ -1,0 +1,67 @@
+/*清除全局样式*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	list-style: none;
+}
+img{
+	border: 0;
+}
+#outer{
+	width: 182px;
+	height: 568px;
+	position: relative;
+	margin: 40px auto;
+	
+}
+#btn_t{
+	display: block;
+	width: 68px;
+	height: 68px;
+	background: url(images/btn.jpg) no-repeat -70px -69px;
+	position: absolute;
+	top:0px;
+	left: 60px;	
+	z-index: 1;
+}
+#btn_t:hover{
+	background: url(images/btn.jpg) no-repeat -70px 0;
+}
+#btn_bo{
+	display: block;
+	width: 68px;
+	height: 68px;
+	background: url(images/btn.jpg) no-repeat 1px -69px;
+	position: absolute;
+	bottom: 0px;
+	left: 60px;
+	z-index: 1;	
+}
+#btn_bo:hover{
+	background: url(images/btn.jpg) no-repeat 1px 0;
+}
+#picture{
+	width:182px; 
+	height: 432px; 
+	margin: 0 auto; 
+	position: relative; 
+	top: 68px;
+	overflow:hidden;
+}
+ul{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+ul li{
+	width: 182px;
+	height: 108px;
+	text-align: center;
+
+}
+ul li a:hover{
+	position: relative;
+	top: 0px;
+}

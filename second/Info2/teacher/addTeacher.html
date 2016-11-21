@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		$(function(){
+			//将输入的数据传递到后台
+
+			//向后台请求拿到option里面的数据
+			$.ajax('findGrade',{
+				dataTpye:'jsonp',
+				jsonp:'foo',
+				jsonpCallback:'addOption'
+			});
+
+			//开始添加  向后台发送一个教师信息	
+			$(':submit').on('click',function(){
+				//1.拿到数据
+				var username = $(':text[name="username"]').val();
+				var workage = $(':text[name="workage"]').val();
+				var salary = $(':text[name="salary"]').val();
+				var grade = $('select').val();
+				var str=username+':'+workage+':'+salary+':'+grade;
+				//2.向后台发送
+				$.ajax('addTea',{
+					dataTpye:'jsonp',
+					jsonp:'foo',
+					jsonpCallback:'jumpToTea'
+				});
+			});
+		});
+		//添加成功后跳转到tea.html的页面
+			function jumpToTea(data){	
+				$('.tab_content').load('teacher/tea.html');
+			}
+		//处理option
+		function addOption(data){
+			//[object{一级}，object{二级}，object{三级}]
+			data.forEach(function(item){
+				for(var key in item){
+					//创建option
+					var option=$('<option>'+item[key]+'</option>');
+					//追加到select里面
+					$('.sel').append(option);
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="inner">
+		<table>
+			<tr>
+				<td>姓名</td><br>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>工龄</td><br>
+				<td><input type="text" name="workage"></td>
+			</tr>
+			<tr>
+				<td>薪资</td><br>
+				<td><input type="text" name="salary"></td>
+			</tr>
+			<tr>
+				<td>等级</td><br>
+				<td>
+					<select class="sel">
+						<option>请选择</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="提交">
+					<input type="reset" value="重置">
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

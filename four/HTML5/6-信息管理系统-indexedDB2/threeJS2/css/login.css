@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#option{
+    position: fixed;
+    top: 150px;
+    left:350px;
+    opacity: 0.9;
+    z-index: 10001;
+}
+table{
+    color: white;
+    font-weight: 600;
+    width: 600px;
+    height: 200px;
+    border-collapse: collapse;
+}
+table th,table td{
+    border: 1px solid darkgray;
+    text-align: center;
+    line-height: 30px;
+}
+.one{
+    width: 30%;
+}
+.two{
+    width: 70%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+input{
+    background-color: white;
+}
+button[id=login]{
+    margin-right: 20px;
+}
+input[type=text]{
+    border-radius: 5px 5px;
+    height: 20px;
+}
+input[type=number]{
+    border-radius: 5px 5px;
+    height: 20px;
+}
+input[type=password]{
+    border-radius: 5px 5px;
+    height: 20px;
+}

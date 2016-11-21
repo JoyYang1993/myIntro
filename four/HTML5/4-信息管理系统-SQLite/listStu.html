@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/listStu.css">
+    <script src="frameWork/jquery.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/listStu.js"></script>
+</head>
+<body>
+    <header>
+        <h1>展示学生信息页面</h1>
+    </header>
+    <article>
+        <section id="one">
+            <input type="search" name="search"><button>搜索</button>
+        </section>
+        <section>
+            <table>
+                <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>生源地</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr hidden>
+                    <td><input type="checkbox"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="two">
+            <button><a href="addStu.html">添加</a></button>
+            <button>删除</button>
+            <button>修改</button>
+        </section>
+    </article>
+    <footer>
+
+    </footer>
+</body>
+</html>

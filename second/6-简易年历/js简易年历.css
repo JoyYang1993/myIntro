@@ -1,0 +1,56 @@
+/*清除全局样式*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*外层背景*/
+#outer{
+	width: 250px;
+	height: 400px;
+	background-color: #EAE9E9;
+	margin: auto;
+}
+/*每一个月份*/
+#month_title{
+	width: 220px;
+	height: 280px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 15px;
+	
+}
+/*每一个月份对应的标题*/
+ .month_title_{
+	width: 60px;
+	height: 60px;
+	background-color: #424242;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #424242;
+	color: white;
+	text-align: center;
+
+} 
+.c1{
+	margin-left: 8px;
+}
+.c2{
+	margin-right: 0px;
+}
+.h_4{
+	margin-top: 10px;
+}
+/*每一个月份对应的内容*/
+.montn_content{
+	width: 218px;
+	height: 68px;
+	background-color: #F1F1F1;
+	float: left;
+	margin-left: 15px;
+	margin-top: 10px;
+	display: none;
+	text-align: center;
+	line-height: 70px;
+	border: 1px solid white;
+}

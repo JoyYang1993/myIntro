@@ -1,0 +1,107 @@
+<style>
+    .pl5 input{
+        display: none;
+    }
+</style>
+<div class="editingarea">
+    <div class="c_flex"><span class="c_flexible"></span></div>
+    <div class="c_editview">
+        <div class="c_condition">
+            <span>
+                <select>
+                    <div>
+                        <option ng-model="sub.id" ng-click="show(0)">题号</option>
+                        <option ng-model="sub.subjectType.realName" ng-click="show(1)">题型</option>
+                        <option ng-model="sub.subjectLevel.realName" ng-click="show(2)">难度</option>
+                        <option ng-model="sub.user" ng-click="show(3)">上传人</option>
+                        <option ng-model="sub.examPaper" ng-click="show(4)">来源</option>
+                        <option ng-model="sub.uploadTime" ng-click="show(5)">上传时间</option>
+                    </div>
+                </select>
+            </span>
+            <span class="pl5 " >
+                <input type="text" ng-model="sub.id" placeholder="请输入题号" style="display: inline-block">
+                <input type="text" ng-model="sub.subjectType.realName" placeholder="请输入题型">
+                <input type="text" ng-model="sub.subjectLevel.realName" placeholder="请输入难度">
+                <input type="text" ng-model="sub.user" placeholder="请输入上传人">
+                <input type="text" ng-model="sub.examPaper" placeholder="请输入来源">
+                <input type="text" ng-model="sub.uploadTime" placeholder="请输入上传时间">
+            </span>
+            <span class="pl15 pr15 btn_gray " style="border-radius: 20px 20px">输入关键字可自动查找</span>
+        </div>
+        <div class="divtable">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablea">
+                <tr>
+                    <td align="center">类型</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="#/AllSubjects/a/0/b/{{params.b}}/c/{{params.c}}/d/{{params.d}}" class="{{params.a == 0?'active3':''}}">全部</a>
+                            <a href="#/AllSubjects/a/{{type.id}}/b/{{params.b}}/c/{{params.c}}/d/{{params.d}}" ng-repeat="type in types" class="{{params.a == type.id?'active3':''}}">{{type.realName}}</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">等级</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="#/AllSubjects/a/{{params.a}}/b/0/c/{{params.c}}/d/{{params.d}}" class="{{params.b == 0?'active3':''}}">全部</a>
+                            <a href="#/AllSubjects/a/{{params.a}}/b/{{level.id}}/c/{{params.c}}/d/{{params.d}}" ng-repeat="level in levels" class="{{params.b == level.id ?'active3':''}}">{{level.realName}}</a>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">方向</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="#/AllSubjects/a/{{params.a}}/b/{{params.b}}/c/0/d/{{params.d}}" class="{{params.c == 0?'active3':''}}">全部</a>
+                            <a href="#/AllSubjects/a/{{params.a}}/b/{{params.b}}/c/{{dep.id}}/d/{{params.d}}" ng-repeat="dep in deps" class="{{params.c == dep.id?'active3':''}}">{{dep.name}}</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">知识点</td>
+                    <td align="left">
+                        <div class="chose">
+                            <a href="#/AllSubjects/a/{{params.a}}/b/{{params.b}}/c/{{params.c}}/d/0"  class="{{params.d == 0?'active3':''}}">全部</a>
+                            <a href="#/AllSubjects/a/{{params.a}}/b/{{params.b}}/c/{{params.c}}/d/{{topic.id}}" ng-repeat="topic in topics" class="{{params.d == topic.id?'active3':''}}">{{topic.title}}</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Catalog">
+            <div class="Catalog_right">
+                <div class="Catalogtitle">
+                    总计<em>{{subjects.length}}</em>道题&nbsp;&nbsp;
+                    提示：单击可显示答案和解析&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="answer"/>
+                    <b>显示答案和解析</b>&nbsp;&nbsp;
+                   <!-- <div><i>1</i><a href="" class="pageone">前</a><a href="" class="pagetwo">后</a></div>--></div>
+                <div class="Catalog_rightnei"  ng-repeat="subject in subjects|filter:sub">
+                    <div class="Catalogtitwo">
+                        <b>题号：{{subject.id}}</b>&nbsp;&nbsp;
+                        题型：{{subject.subjectType.realName}}&nbsp;&nbsp;
+                        难度：{{subject.subjectLevel.realName}}&nbsp;&nbsp;
+                        上传人：{{subject.user}}&nbsp;&nbsp;
+                        来源：{{subject.examPaper}}&nbsp;&nbsp;
+                        上传时间:{{subject.uploadTime}}&nbsp;&nbsp;
+                    </div>
+                    <div class="Catalogcontent">
+                        <div class="Catalogcontentup">
+                            <b>题目：{{subject.stem}}</b>
+                            <ul ng-repeat="choice in subject.choices">
+                                <li>
+                                    {{choice.no}}、&nbsp;{{choice.content}}
+                                </li>
+                            </ul>
+                            <p ng-show="answer"><b>正确答案：</b>{{subject.answer}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

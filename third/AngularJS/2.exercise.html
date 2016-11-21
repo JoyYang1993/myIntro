@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+    <script src="../../frameWork/AngularJS/angular.min.js"></script>
+    <script>
+        //创建模块
+        var app = angular.module('myApp',[]);
+        //创建控制器
+        app.controller('oneController',function ($scope,$http) {
+           $http({
+               url:'stus.json',
+               method:'GET'
+           }).success(function (data) {
+               $scope.stus = data;
+               //console.log($scope.stus);
+           });
+            $scope.expression = {
+                id:'',
+                name:'',
+                age:'',
+                gender:'',
+                score:''
+            };
+        });
+        //自定义指令
+        app.directive('stuTbls',function () {
+            return {
+                templateUrl:'load.html',
+                compile:function (tElement) {
+                   // console.log(tElement);
+                    return {
+                        post:function postLink(attrbutes,element) {
+                           // console.log(arguments);
+                            //console.log(element);
+                            var tbody = element.find('tbody');
+                            console.log(tbody);
+                            tbody.on('mouseover',function (event) {
+                                /*console.log(event.target);//td
+                                console.log(event.currentTarget);//tbody
+                                console.log(this);//tbody*/
+                                angular.element(event.target).parent().css('background-color','blue');
+                            });
+                            tbody.on('mouseout',function (event) {
+                                angular.element(event.target).parent().css('background-color','');
+                            });
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="oneController">
+    <stu-tbls></stu-tbls>
+</body>
+</html>

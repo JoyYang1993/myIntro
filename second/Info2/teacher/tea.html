@@ -1,0 +1,126 @@
+
+	<script type="text/javascript">
+		$(function(){
+			//获取数据
+			/*$.getJSON('data/teac.json',function(data){
+				showData(data);
+			});	*/
+			//向后台请求数据的时候要用Ajax
+			$.ajax('data/teac.json',{
+				dataType:'json',
+				method:'GET',
+				success:function(data,readyState,xhrXMLHttpRequest){
+					console.log(data);
+					//console.log(readyState);
+					//console.log(xhrXMLHttpRequest);
+					showData(data);
+				}
+			});
+			//全选和取消
+			//console.log($('.opt_btns :checkbox'));
+			$('.opt_btns :checkbox').click(function(event){
+				//console.log(this);//input  checkbox
+				if($(this).prop('checked')){
+					$('tbody :checkbox').prop('checked','checked');
+				}else{
+					$('tbody :checkbox').removeAttr('checked');
+				}
+			});
+			//添加
+			$('.opt_btns button:eq(0)').on('click',function(){
+				$('.tab_content').load(teacher/addTeacher.html);
+			});
+			//删除
+			$('.opt_btns button:eq(0)').on('click',function(){
+				//1.选择到需要删除的信息
+				var check = $('tbody :checkbox:checked');
+				console.log(check);
+				var val=check.map(function(item){
+					console.log(item);
+					return item.value;//0 1 2val
+				}).get().join();
+				//2.给后台发送请求，要求删除该部分数据
+				$.ajax('delStu',{
+					dataType:'jsonp',
+					data:{val},
+					jsonp:'foo',	
+					jsonpCallback:'delSuccess'
+				});
+			});
+			//修改
+			$('.opt_btns button:eq(1)').on('click',function(){
+				id=$('tbody :checkbox:checked:eq(0)').val();
+				$('.tab_content').load('teacher/changeTea.html');
+			});
+		});
+		//删除成功后返回到tea.html的页面
+		function delSuccess(data){
+			$('.tab_content').load('teacher/tea.html');
+		}
+		//处理数据的函数
+		function showData(data){
+			var tbody=$('.inner tbody');
+			//console.log(tbody);
+			tbody.empty();
+			//循环遍历数组，拿到数组中的每一项(对象)
+			data.forEach(function(item){
+				//console.log(item);
+				//创建行
+				var tr=$('<tr></tr>');
+				//创建第一列，拥有多选框的那一列
+				var td=$('<td><input type="checkbox"></td>');
+				//追加
+				tr.append(td);
+				//循环拿到数组中的每一项的属性值
+				for(var key in item){
+					//console.log(item[key]);
+					//创建列
+					var td=$('<td>'+item[key]+'</td>');
+					//追加
+					tr.append(td);
+				}
+				tbody.append(tr);
+			});
+		}
+	</script>
+
+	<!--教师管理-->
+			<div class="inner" title="data/teac.json">
+				<div class="selects">
+					<select name="" id="">
+						<option value="name">姓名</option>
+						<option value="clazz">班级</option>
+						<option value="grade">成绩</option>
+					</select>
+					<input type="text">
+					<input type="submit" value="search">
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>选择</th>
+							<th>姓名</th>
+							<th>工龄</th>
+							<th>薪资</th>
+							<th>等级</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+				<input type="checkbox">
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="opt_btns">
+					<input type="checkbox">
+					<button>添加</button>
+					<button>修改</button>
+					<button>删除</button>
+				</div>
+			</div>

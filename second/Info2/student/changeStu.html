@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		//console.log(id);
+		var xx=$(':hidden :input[type='text']').attr('value',id);
+		console.log(xx);
+		//根据id去后台请求一个数据
+		$.ajax('findOnlyStu',{
+			dataType:'jsonp',
+			data:{id},
+			jsonp:'foo',
+			jsonpCallback:'oneStu'
+		})
+		//option里面的信息要从数据库中拿过来展示在页面上，不是我们自己写上去的
+		$.ajax('findgrade',{
+			//拿到option里面的信息
+			dataType:'jsonp',
+			jsonp:'foo',
+			jsonpCallback:'addOption'
+		});
+		//将输入的数据传递到后台
+		$('button').click(function(){
+			//选择到所有输入框中的值
+			var name=$(':text:eq(1)').val();
+			var grade=$('select').val();
+			var gender=$(':radio').val();
+			var source=$(':text[name=source]').val();
+			var str=name+':'+grade+':'+gender+':'+source+':'+source+':'+id;
+			//向后台发送数据
+			$.ajax('changeStu',{
+				dataType:'jsonp',
+				data:{str},
+				jsonp:'foo',
+				jsonpCallback:'jumpToStu'
+			});
+		});
+	});
+	//后台修改成功后跳转到stu.html
+	function jumpToStu(data){
+		$('.tab_content').load('student/stu.html');
+	}
+	
+	function oneStu(data){
+		//console.log(data);
+		data.forEach(function(item){	
+			var arr=[];
+			var i=0;
+			for(var key in item){
+				arr[i]=item[key];
+				i++;
+			}
+			var name=arr[4];
+			var clazz=arr[0];
+			var gender=arr[1];
+			var grade=arr[2];
+
+			if(gender=='男'){
+				$(':radio[value="1"]').attr('checked','checked');
+			}else{
+				$(':radio[value="2"]').attr('checked','checked');
+			}
+			//赋值
+			$(':disabled').val(name);
+			$('select').append($('<option selected>'+clazz+'</option>'));
+			$(':input[type="text"]:eq(2)').val(grade);
+			console.log($(':input[type="text"]:eq(2)'));
+		});
+	}
+	//addOption
+	function addOption(data){
+		data.forEach(function(item){
+			for(var key in item){
+				var option=$('<option>'+item[key]+'</option>');
+				$('.sel').append(option);
+			}
+		});
+	}
+
+</script>
+</head>
+<body>
+<div class="inner">
+		<table>
+		
+				<tbody>
+					<tr style="display:none">
+						<td>id</td>
+						<td><input type="text" name="id" value="1" ></td>
+					</tr>
+					<tr>
+						<td>姓名</td>
+						<td><input type="text" name="name" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td>班级</td>
+						<td><select class="sel">
+							<option>请选择</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>性别</td>
+						<td><input type="radio" name="gender" value="1">男
+						<input type="radio" name="gender" value="2">女</td>
+					</tr>
+					<tr>
+						<td>分数</td>
+						<td><input type="text" name="source"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button>修改</button>
+						</td>
+					</tr>
+				</tbody>
+			
+		</table>
+</div>
+
+</body>
+</html>
+

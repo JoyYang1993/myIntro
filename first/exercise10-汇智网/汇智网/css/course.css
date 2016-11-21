@@ -1,0 +1,551 @@
+/*全局样式*/
+article,section,header,footer,nav,address{
+    display: block;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+body{
+    background-color: #F0F0F0;
+}
+
+/*头部样式*/
+header{
+    height: 335px;
+    position: relative;
+    top:0px;
+    left:0px;
+    background-color: #465155;
+}
+/*头部LOGO和导航*/
+div.nav_L{
+    width: 800px;
+    height:50px;
+    /* background-color: darkorange;*/
+    position: absolute;
+    top: 0px;
+    left:60px;
+}
+div.logo{
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+div.nav_L ul{
+    float: left;
+    /* background-color: #4C4C4C;*/
+}
+div.nav_L ul li{
+    width: 65px;
+    height: 50px;
+    font-size: x-small;
+    text-align: center;
+    line-height: 50px;
+    /* background-color: darkmagenta;*/
+}
+div.nav_L ul li:hover{
+    background-color: darkslategrey;
+}
+#cloud{
+    width: 80px;
+    height:30px;
+    background-color: #57BB90;
+    float: left;
+    margin-top: 12px;
+    border-radius: 5px;
+    border: 2px solid #48D6CE;
+    cursor: pointer;
+    font-size: x-small;
+}
+/*登录和注册*/
+div.nav_R{
+    width: 150px;
+    height:50px;
+    /* background-color: blueviolet;*/
+    position: absolute;
+    top:0px;
+    right: 60px;
+}
+div.nav_R li{
+    font-size: x-small;
+    width: 65px;
+    height: 50px;
+    /* background-color: #00D1FE;*/
+    text-align: center;
+    line-height: 50px;
+}
+div.nav_R li img{
+    margin-right: 3px;
+}
+div.nav_R li:hover{
+    background-color: darkslategrey;
+}
+/*用户信息版面*/
+div.userInfo{
+    width: 100%;
+    height: 285px;
+    background-color: #009688;
+    position: absolute;
+    top:50px;
+    left:0px;
+}
+/*大的logo*/
+div.userInfo div.logo3{
+    width: 226px;
+    height:225px;
+  /*  background-color: saddlebrown;*/
+    position: absolute;
+    top: 30px;
+    left: 95px;
+}
+/*HTML5天气预报*/
+div.userInfo div.intros{
+    width: 500px;
+    height:230px;
+   /* background-color: navajowhite;*/
+    position: absolute;
+    top:28px;
+    left: 365px;
+}
+div.userInfo div.intros div.intros1{
+    width: 75%;
+    height:80px;
+   /* background-color: darkmagenta;*/
+    position: absolute;
+    top:30px;
+    left:0px;
+}
+#weather{
+    color: white;
+}
+div.userInfo div.intros div.intros1 strong,button,p{
+    color: #4C4C4C;
+}
+div.userInfo div.intros div.intros1 button{
+    border: 1px solid beige;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+div.userInfo div.intros div.intros1 p{
+    font-size: 12px;
+    color: #9CC6E0;
+}
+div.userInfo div.intros div.intros2{
+    width: 95%;
+    height:60px;
+  /*  background-color: lawngreen;*/
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+}
+div.userInfo div.intros div.intros2 div.study{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    background-color: #9DD1CC;
+    border-radius: 5px 0px 0px 5px;
+    text-align: center;
+   line-height: 30px;
+    color: #4C4C4C;
+}
+div.userInfo div.intros div.intros2 div.studyData{
+    width: 40px;
+    height:30px;
+    position: absolute;
+    bottom:15px;
+    left: 60px;
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    color: #4C4C4C;
+    text-align: center;
+    line-height: 30px;
+}
+div.userInfo div.intros div.intros2 div.recommend{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    bottom: 15px;
+    left: 105px;
+    background-color: #3CAC6B;
+    border-radius: 5px 0px 0px 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #4C4C4C;
+}
+div.userInfo div.intros div.intros2 div.recomData{
+    width: 25px;
+    height:30px;
+    position: absolute;
+    bottom:15px;
+    left: 165px;
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    color: black;
+    text-align: center;
+    line-height: 30px;
+}
+img.z{
+    margin-left: 220px;
+    margin-top: 15px;
+}
+div.intros2 img{
+    margin-right: 5px;
+}
+/*用户信息*/
+div.userInfo div.user{
+    width: 210px;
+    height:120px;
+  /*  background-color: hotpink;*/
+    position: absolute;
+    top:30px;
+    right: 40px;
+}
+#question{
+    font-size: 12px;
+}
+div.userInfo div.user div.userImg{
+    width: 66px;
+    height: 66px;
+    /*background-color: #48D6CE;*/
+    float: left;
+    margin-right: 5px;
+}
+div.userInfo div.user div.userWay{
+    width: 133px;
+    height: 60px;
+   /* background-color: #3CAC6B;*/
+    float: left;
+    margin-top: 5px;
+}
+#user{
+    font-weight: bold;
+}
+div.userInfo div.user div.userWay button.btn1{
+    width: 60px;
+    height:30px;
+    background-color: #A6DAD5;
+    border: 0px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 60px;
+    right:80px;
+
+}
+div.userInfo div.user div.userWay button.btn2{
+    width: 60px;
+    height:30px;
+    background-color: #3BB1BF;
+    border: 0px;
+    border-radius: 5px;
+    color: #B9C8E0;
+    position: absolute;
+    bottom: 60px;
+    right:18px;
+}
+div.userInfo div.user p{
+    float: left;
+    font-size: 14px;
+    color: #B9C8E0;
+}
+
+/*内容区域*/
+div.content{
+    width: 1000px;
+    height:760px;
+   /* background-color: darkgoldenrod;*/
+    margin: auto;
+    position: relative;
+    top:10px ;
+    left: auto;
+    margin-bottom: 20px;
+}
+div.content p{
+    color: #337ABA;
+    position: absolute;
+    top:15px;
+    left: 0px;
+}
+div.content div.conLeft{
+    width: 60%;
+    height:460px;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    border-radius: 5px;
+}
+div.content div.conLeft ul{
+    height: 40px;
+    /*background-color: #00D1FE;*/
+    line-height: 40px;
+    border-bottom: 1px solid #EEEEEE;
+}
+div.content div.conLeft li{
+    margin-left: 20px;
+    color: #5982B9;
+}
+div.content div.conLeft div.demand{
+    width: 95%;
+    height: 230px;
+   /* background-color: #00D1FE;*/
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    border-radius: 5px;
+    border: 2px solid #E5E5E5;
+
+}
+div.content div.conLeft div.demand div.demand1{
+    width: 100%;
+    height: 50px;
+    background-color: #F5F5F5;
+    border-bottom: 2px solid #E5E5E5;
+    line-height: 50px;
+}
+div.content div.conLeft div.demand div.demand1 strong{
+    font-size: 18px;
+    color: #4C4C4C;
+    margin-left: 10px;
+}
+div.content div.conLeft div.demand table{
+    width: 90%;
+    height: 130px;
+    border-collapse: collapse;
+    position: absolute;
+    top:70px;
+    left: 30px;
+}
+div.content div.conLeft div.demand td{
+    border: 2px solid #E5E5E5;
+    color: #4C4C4C;
+}
+div.content div.conLeft div.city{
+    width: 95%;
+    height: 50px;
+   /* background-color: #00D1FE;*/
+    position: absolute;
+    top: 290px;
+    left: 15px;
+    border-radius: 5px;
+    border: 2px solid #E5E5E5;
+    background-color: #F5F5F5;
+}
+div.content div.conLeft p{
+    float: left;
+    color: #4C4C4C;
+    font-weight: bold;
+}
+div.content div.conLeft div.city div{
+    width: 50px;
+    height: 50px;
+  /*  background-color: darkmagenta;*/
+    float: right;
+    text-align: center;
+    line-height: 65px;
+}
+div.content div.conLeft div.weather{
+    width: 95%;
+    height: 50px;
+    /*background-color: #00D1FE;*/
+    position: absolute;
+    top: 350px;
+    left: 15px;
+    border-radius: 5px;
+    border: 2px solid #E5E5E5;
+    background-color: #F5F5F5;
+}
+div.content div.conLeft div.weather div{
+    width: 50px;
+    height: 50px;
+   /* background-color: darkmagenta;*/
+    float: right;
+    text-align: center;
+    line-height: 65px;
+}
+div.content div.conRight{
+    width: 30%;
+    height: 600px;
+    /*background-color: lightcoral;*/
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    border: 2px solid #DDDDDD;
+    border-radius: 5px;
+}
+div.content div.conRight div.title{
+    width: 100%;
+    height: 50px;
+    background-color: #F5F5F5;
+    border-bottom: 2px solid #DDDDDD;
+    line-height: 50px;
+}
+div.content div.conRight div.title img{
+    position:absolute;
+    top: 18px;
+    left: 20px;
+}
+div.content div.conRight div.title strong{
+    position: absolute;
+    top: 2px;
+    left: 45px;
+    color: #4C4C4C;
+}
+div.conRight div.course{
+    width: 95%;
+    height: 150px;
+   /* background-color: #3CAC6B;*/
+    margin-top: 20px;
+    margin-left: 8px;
+    border-bottom: 2px solid #F2F2F2;
+}
+div.conRight div.course div.book{
+    width: 100%;
+    height: 125px;
+    background-color: #EDEFF0;
+    border: 2px solid #DDDDDD;
+}
+div.conRight div.course div.book div.bookImg{
+    width: 40%;
+    height: 80%;
+   /* background-color: firebrick;*/
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+div.conRight div.course div.book div.bookImg span{
+    color: #337AB7;
+}
+div.conRight div.course div.book div.bookWord{
+    width: 50%;
+    height: 80%;
+   /* background-color: fuchsia;*/
+    float: left;
+    margin-top: 10px;
+    color: #337AB7;
+}
+/*底部样式*/
+footer{
+    height: 490px;
+    background-color: #343C3F;
+    position: relative;
+    top:0px;
+    left:0px;
+}
+/*汇智网简介*/
+div.intro{
+    width: 300px;
+    height: 220px;
+    /* background-color: #57BB90;*/
+    float: left;
+    margin-right: 100px;
+    margin-left: 60px;
+}
+#logo2{
+    margin-bottom: 25px;
+}
+div.intro p{
+    margin-bottom: 30px;
+    color: #C2C3C3;
+    font-size: 14px;
+}
+
+div.linkAll img{
+    margin-right: 20px;
+}
+/*友情链接*/
+div.link{
+    width: 130px;
+    height: 240px;
+    /* background-color: lawngreen;*/
+    float: left;
+    margin-right: 90px;
+}
+div.link li{
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+div.link li a{
+    color: #C2C3C3;
+}
+div.link li a:hover{
+    color: #00D1FE;
+}
+#linkTopic{
+    font-size: 13px;
+    color: #C2C3C3;
+}
+/*服务于支持*/
+div.server{
+    width: 90px;
+    height: 265px;
+    /* background-color: firebrick;*/
+    float: left;
+    margin-right: 125px;
+}
+div.server li{
+    display: block;
+    margin-bottom: 18px;
+    font-size: 14px;
+    /* background-color: #00D1FE;*/
+}
+div.server li a span:hover{
+    color: #00D1FE;
+}
+#serverAnd{
+    font-size: 13px;
+    color: #C2C3C3;
+}
+div.server li img{
+    margin-right: 5px;
+    float: left;
+}
+div.server li span{
+    line-height: 10px;
+    color: #C2C3C3;
+}
+/*微信订阅号*/
+div.WX{
+    width: 160px;
+    height: 165px;
+    /*  background-color: darkblue;*/
+    float: left;
+}
+div.WX p{
+    font-size: 13px;
+    color: #C2C3C3;
+    margin-bottom: 20px;
+}
+div.intro,div.link,div.server,div.WX{
+    margin-top: 60px;
+}
+/*底部版权*/
+div.copy{
+    width: 1000px;
+    height:90px;
+    border-top: 2px solid #465155;
+    position: absolute;
+    top:395px;
+    left:60px;
+    font-size: smaller;
+    text-align: center;
+    line-height: 90px;
+    color:#C2C3C3 ;
+    /* background-color: #00D1FE;*/
+}

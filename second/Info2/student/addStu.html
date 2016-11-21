@@ -1,0 +1,81 @@
+<script type="text/javascript">
+	$(function(){
+		//将输入的数据传递到后台
+		$.ajax('findgrade',{
+			//拿到option里面的信息
+			dataType:'jsonp',
+			jsonp:'foo',
+			jsonpCallback:'addOption'
+		});
+		//向后台发送一个学生的信息
+		$(':submit').on('click',function(){
+			//拿到信息
+			var name = $(':text:eq(0)').val();
+			var option = $('select').val();
+			var gender = $(':radio:checked').val()
+			var score = $(':text[name="source"]').val();
+			var str=name+':'+option+':'+gender+':'+score;
+			//向后台发送数据
+			var xx = $.ajax('addStu',{
+				dataType:'jsonp',
+				data:{str}
+				jsonp:'foo',
+				jsonpCallback:'jumpToStu'
+			});
+			xx.fail(function(xx,yy,zz){
+				console.log(xx);
+				console.log(yy);
+				console.log(zz);
+			});
+		});
+	});
+	//添加成功后跳转到stu.html
+	function jumpToStu(data){
+		$('.tab_content').load('student/stu.html');
+	}
+	//处理option
+	function addOption(data){
+			//console.log(data);
+			//[object{一年级}，object{二年级}，object{三年级}]
+			data.forEach(function(item){ 
+				for(var key in item){
+					var option=$('<option>'+item[key]+'</option>');
+					$('.sel').append(option);
+				}
+			});
+		}
+</script>
+
+<div class="inner">
+		<table>
+				<tbody>
+					<tr>
+						<td>姓名</td>
+						<td><input type="text" name="name"></td>
+					</tr>
+					<tr>
+						<td>班级</td>
+						<td><select class="sel">
+							<option>请选择</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>性别</td>
+						<td><input type="radio" name="gender" value="1">男
+						<input type="radio" name="gender" value="2">女</td>
+					</tr>
+					<tr>
+						<td>分数</td>
+						<td><input type="text" name="source"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="submit" value="提交">
+							<input type="reset" value="重置">
+						</td>
+					</tr>
+				</tbody>
+			
+		</table>
+</div>
+

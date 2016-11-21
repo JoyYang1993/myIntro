@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link id="link1" href="css1.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+<body>
+
+<dl id="message">
+	<form>
+		<dt>
+			<strong>可以换肤的提交框：</strong>
+			<input id="btn1" type="button" value="皮肤1"  />
+			<input id="btn2" type="button" value="皮肤2" />
+		</dt>
+		<dd>输入姓名：<input class="text" type="text" /></dd>
+		<dd>输入密码：<input class="text" type="password" /></dd>
+		<dd>请您留言：<textarea></textarea></dd>
+		<dd class="center"><input class="btn" type="submit" value="提交" /></dd>
+	</form>
+</dl>
+
+</body>
+<!-- 实现如图1所示的功能，在点击皮肤一的时候可以变换一个背景
+  在点击皮肤二的时候更换另一个背景（所应用的图片在ex1文件夹中） -->
+ <script type="text/javascript">
+ 	//获取节点
+ 	var body=document.body;
+ 	console.log(body);
+ 	var btn1=document.getElementById("btn1");
+ 	console.log(btn1);
+ 	var btn2=document.getElementById("btn2");
+ 	console.log(btn2);
+ 	
+ 	//添加一个点击事件
+ 	btn1.onclick=function(){
+ 		var link=document.getElementById("link1");
+ 		link.setAttribute("href","css2.css");
+ 	};
+ 	btn2.onclick=function(){
+ 		var link=document.getElementById("link1");
+ 		link.setAttribute("href","css1.css");
+ 	};
+ </script>
+
+
+</html>
